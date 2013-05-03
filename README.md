@@ -1,30 +1,106 @@
-# jQuery Check
+#jquery-check
 
-a easy used and customized checkbox
+jquery-check was designed to make implementation as easy as possible. Before implementing, make sure you meet the minimum requirements.
 
-## Getting Started
-Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/amazingSurge/jquery-check/master/dist/jquery-check.min.js
-[max]: https://raw.github.com/amazingSurge/jquery-check/master/dist/jquery-check.js
+![paginator]()
 
-In your web page:
+### Requirements
+- jQuery 1.4.x or greater
 
-```html
-<script src="jquery.js"></script>
-<script src="dist/jquery-check.min.js"></script>
-<script>
-jQuery(function($) {
-  $.awesome(); // "awesome"
-});
-</script>
-```
+### Implementation
 
-## Documentation
+For the most basic implementation, follow the steps below:
+
+1.	Download the [jquery-check](https://raw.github.com/amazingSurge/jquery-check) Package
+
+2.	Unzip the package and upload the following files into a folder on your website:  
+
+	-  jquery.check.js
+	-  check.css 
+
+3.	On the page you are implementing Paginator on, add a reference to the jQuery library.
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+4.	Below the reference to jQuery, add a reference to the Paginator script.
+
+		<script type="text/javascript" src="/jquery.check.js"></script>
+
+5.	On the page, add a input (or any other element with an class works).
+
+		<ul>
+            <li>
+                <input class="radio" type="radio" name="radiobox" id="male-1" value="male" />
+                <label for="male-1" >Male</label>
+            </li>
+             <li>
+                <input class="radio" type="radio" name="radiobox" id="male-2" value="female" />
+                <label for="male-2" >Female</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" name="radiobox" id="male-3" value="male" disabled="disabled" />
+                <label for="male-3" >checked disable</label>
+            </li>
+            <li>
+                <input class="radio" type="radio" name="radiobox" id="male-4" value="male" disabled="disabled" />
+                <label for="male-4" >checked disable</label>
+            </li>
+        </ul>
+
+6.	Initialize Paginator on the file input. the first argument is the total pages get from your server , the second is options. 
+		
+		$(document).ready(function() {
+		    $(".radio").check();                         
+		});
+
+7.	Add a link to the Paginator stylesheets in the head of the document.
+
+		<link rel="stylesheet" type="text/css" href="check.css" />
+
+8.	The final page should look like the following:
+
+		<!DOCTYPE html>
+		<html>
+			<head>
+			    <title>My Uploadify Implementation</title>
+			    <link rel="stylesheet" type="text/css" href="check.css">
+			    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+			    <script type="text/javascript" src="jquery.check.js"></script>
+			    <script type="text/javascript">
+			    $(document).ready(function() {
+			    $(".radio").check();                         
+			});
+			    </script>
+			</head>
+			<body>
+				<ul>
+		            <li>
+		                <input class="radio" type="radio" name="radiobox" id="male-1" value="male" />
+		                <label for="male-1" >Male</label>
+		            </li>
+		             <li>
+		                <input class="radio" type="radio" name="radiobox" id="male-2" value="female" />
+		                <label for="male-2" >Female</label>
+		            </li>
+		            <li>
+		                <input class="radio" type="radio" name="radiobox" id="male-3" value="male" disabled="disabled" />
+		                <label for="male-3" >checked disable</label>
+		            </li>
+		            <li>
+		                <input class="radio" type="radio" name="radiobox" id="male-4" value="male" disabled="disabled" />
+		                <label for="male-4" >checked disable</label>
+		            </li>
+		        </ul>
+			</body>
+		</html>
+
+
+### Documentation
 _(Coming soon)_
 
-## Examples
+### License MIT
 _(Coming soon)_
 
-## Release History
+### Release History
 _(Nothing yet)_
