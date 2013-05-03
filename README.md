@@ -68,9 +68,9 @@ For the most basic implementation, follow the steps below:
 			    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 			    <script type="text/javascript" src="jquery.check.js"></script>
 			    <script type="text/javascript">
-			    $(document).ready(function() {
-				    $(".radio").check();                         
-				});
+				    $(document).ready(function() {
+					    $(".radio").check();                         
+					});
 			    </script>
 			</head>
 			<body>

@@ -57,6 +57,15 @@
             .example {
                 background-color: #F8F8F8;
             }
+
+            label {
+                display: inline-block;
+                margin-left: 5px;
+            }
+            span.check-box {
+                display: inline-block;
+                vertical-align: middle;
+            }
         </style>
     </head>
 <body>
@@ -79,26 +88,20 @@ $(".custom").check({
             <div class="example">
                 <ul>
                     <li>
-                        <input class="radio" type="radio" name="radiobox" id="male-1" value="male" />
-                        <label for="male-1" >Male</label>
+                        <input class="radio" type="radio" name="radiobox" id="male-1" value="male" /><label for="male-1" >Male</label>
                     </li>
 
                      <li>
-                        <input class="radio" type="radio" name="radiobox" id="male-2" value="female" />
-                        <label for="male-2" >Female</label>
+                        <input class="radio" type="radio" name="radiobox" id="male-2" value="female" /><label for="male-2" >Female</label>
                     </li>
 
                     <li>
-                        <input class="radio" type="radio" name="radiobox" id="male-3" value="male" disabled="disabled" />
-                        <label for="male-3" >checked disable</label>
+                        <input class="radio" type="radio" name="radiobox" id="male-3" value="male" disabled="disabled" /><label for="male-3" >checked disable</label>
                     </li>
 
                     <li>
-                        <input class="radio" type="radio" name="radiobox" id="male-4" value="male" disabled="disabled" />
-                        <label for="male-4" >checked disable</label>
+                        <input class="radio" type="radio" name="radiobox" id="male-4" value="male" disabled="disabled" /><label for="male-4" >checked disable</label>
                     </li>
-                    
-                   
                 </ul>
                 <script>                   
                     $(document).ready(function() {
@@ -124,16 +127,13 @@ $(".custom").check({
                         <label for="male-5" >Male</label>
                     </li>
                     <li>
-                        <input class="checkbox" type="checkbox" id="male-6" value="female" checked="checked" />
-                        <label for="male-6" >Male</label>
+                        <input class="checkbox" type="checkbox" id="male-6" value="female" checked="checked" /><label for="male-6" >Male</label>
                     </li>
                     <li>
-                        <input class="checkbox" type="checkbox" id="male-7" value="male" disabled="disabled"/>
-                        <label for="male-8" >checked disable</label>
+                        <input class="checkbox" type="checkbox" id="male-7" value="male" disabled="disabled"/><label for="male-8" >checked disable</label>
                     </li>
                     <li>
-                        <input class="checkbox" type="checkbox" id="male-8" value="male" checked="checked" disabled="disabled" />
-                        <label for="male-8" >unchecked disable</label>
+                        <input class="checkbox" type="checkbox" id="male-8" value="male" checked="checked" disabled="disabled" /><label for="male-8" >unchecked disable</label>
                     </li>
                 </ul>
                 
