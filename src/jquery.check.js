@@ -85,11 +85,13 @@
 
         trigger: function(type) {
             if (type === 'radio') {
+                if (this.checked === 'checked') {
+                    return false;
+                }
+                
                 this.$group.each(function(i,v) {
-
                     if ($(v).prop('checked') === true) {
                         $(v).data('check').set('unchecked');
-                        console.log('trigger')
                     }
                 });
                 this.set('checked');
@@ -121,13 +123,22 @@
                     this.checked = value;
                     this.$check.addClass(this.classname.checked);
                     this.$input.prop('checked',true);
-                    this.$input.trigger('checked');
+                    this.$input.trigger('change');
+                    if (typeof this.options.onChange === 'function') {
+                      
+                        this.options.onChange(this);
+                    }
                     break;
                 case 'unchecked':
                     this.checked = value;
                     this.$check.removeClass(this.classname.checked);
-                    this.$input.prop('checked',false);
-                    this.$input.trigger('unchecked');
+                    this.$input.prop('checked',false);                 
+                    if (this.options.type === 'checkbox' && typeof this.options.onChange === 'function') {
+                        console.log('unchecked')
+                        console.log(this.checked)
+                        this.$input.trigger('change');
+                        this.options.onChange(this);
+                    }
                     break;
                 case 'disabled': 
                     this.state = value;
@@ -167,7 +178,9 @@
 
         state: 'enabled', // null string means enable the check, 'disable' means disable the check
         checked: 'checked',  // null string means unchecked, 'checked' means checked
-        type: 'checkbox' // checkbox , radio
+        type: 'checkbox', // checkbox , radio
+
+        onChange: function() {}
     };
 
     $.fn.check = function(options) {

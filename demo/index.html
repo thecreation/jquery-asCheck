@@ -35,6 +35,28 @@
                 margin: 0;
                 list-style: none;
             }
+            #infobar {
+                width: 500px;
+                height: 200px;
+                border: 1px solid #333;
+                overflow-y: scroll;
+            }
+            .content {
+                width: 100%;
+            }
+            .content div {
+                color: blue;
+                opacity: 0.5;
+            }
+            .content div span {
+                color: #666;
+            }
+            .info {
+                margin-top: 10px;
+            }
+            .example {
+                background-color: #F8F8F8;
+            }
         </style>
     </head>
 <body>
@@ -84,7 +106,13 @@ $(".custom").check({
                         console.log($(bar[3]));
 
                         $('.radio').check({
-                            skin: 'skin-1'
+                            skin: 'skin-1',
+                            onChange: function(instance) {
+                                var type = instance.options.type,
+                                    value = instance.$input.val(),
+                                    status = instance.checked;
+                                $('<div> <span>type: </span>'+ type + ',' + '<span>value: </span>' + value + ',' + '<span>status: </span>' + status +'</div>').prependTo($('.content'));
+                            }
                         });                        
                     });
                 </script>
@@ -112,11 +140,22 @@ $(".custom").check({
                 <script>                   
                     $(document).ready(function() {
                         $('.checkbox').check({
-                            skin: 'skin-1'
+                            skin: 'skin-1',
+                            onChange: function(instance) {
+                                var type = instance.options.type,
+                                    value = instance.$input.val(),
+                                    status = instance.checked;
+                                $('<div> <span>type: </span>'+ type + ',' + '<span>value: </span>' + value + ',' + '<span>status: </span>' + status +'</div>').prependTo($('.content'));
+                            }
                         });  
                     
                     });
                 </script>
+            </div>
+            <div class="example info">
+                <div id="infobar">
+                    <div class="content"></div>
+                </div>
             </div>
            
         </section>    
