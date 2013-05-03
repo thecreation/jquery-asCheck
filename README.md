@@ -3,7 +3,7 @@
 jquery-check was designed to make implementation as easy as possible. Before implementing, make sure you meet the minimum requirements.
 
 ![image][]
- [image]: https://github.com/amazingSurge/jquery-check/blob/master/demo/img/style1.JPG
+ [image]: https://raw.github.com/amazingSurge/jquery-check/blob/master/demo/img/style1.JPG
 
 ### Requirements
 - 	jQuery 1.4.x or greater
@@ -63,7 +63,7 @@ For the most basic implementation, follow the steps below:
 		<!DOCTYPE html>
 		<html>
 			<head>
-			    <title>My Uploadify Implementation</title>
+			    <title>My jquery-check Implementation</title>
 			    <link rel="stylesheet" type="text/css" href="check.css">
 			    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 			    <script type="text/javascript" src="jquery.check.js"></script>
