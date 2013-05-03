@@ -3,7 +3,7 @@
 jquery-check was designed to make implementation as easy as possible. Before implementing, make sure you meet the minimum requirements.
 
 ![image][]
- [image]: https://raw.github.com/amazingSurge/jquery-check/blob/master/demo/img/style1.JPG
+ [image]: https://raw.github.com/amazingSurge/jquery-check/master/demo/img/style1.JPG
 
 ### Requirements
 - 	jQuery 1.4.x or greater
@@ -19,7 +19,7 @@ For the most basic implementation, follow the steps below:
 		- 	jquery.check.js
 		- 	check.css 
 
-3.	On the page you are implementing Paginator on, add a reference to the jQuery library.
+3.	On the page you are implementing jquery-check on, add a reference to the jQuery library.
 
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
