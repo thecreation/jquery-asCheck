@@ -3,7 +3,7 @@
 jquery-check was designed to make implementation as easy as possible. Before implementing, make sure you meet the minimum requirements.
 
 ![image][]
- [image]: /amazingSurge/jquery-check/blob/master/demo/img/style1.JPG
+ [image]: https://github.com/amazingSurge/jquery-check/blob/master/demo/img/style1.JPG
 
 ### Requirements
 - 	jQuery 1.4.x or greater
