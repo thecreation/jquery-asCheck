@@ -16,8 +16,8 @@ For the most basic implementation, follow the steps below:
 
 2.	Unzip the package and upload the following files into a folder on your website:  
 
--  jquery.check.js
--  check.css 
+		-  jquery.check.js
+		-  check.css 
 
 3.	On the page you are implementing Paginator on, add a reference to the jQuery library.
 
@@ -69,8 +69,8 @@ For the most basic implementation, follow the steps below:
 			    <script type="text/javascript" src="jquery.check.js"></script>
 			    <script type="text/javascript">
 			    $(document).ready(function() {
-			    $(".radio").check();                         
-			});
+				    $(".radio").check();                         
+				});
 			    </script>
 			</head>
 			<body>
