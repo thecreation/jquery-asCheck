@@ -1,17 +1,121 @@
-.check-checked {
-  background-color: red;
-}
-
-.check-disabled {
-  background-color: #555;
-  border: 1px solid #333;
-}
-
-.check-box {
+.check-box.type-checkbox.skin-1 {
+  position: relative;
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  border: 1px solid #000;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+.check-box.type-checkbox.skin-1:before {
+  position: absolute;
+  bottom: 8px;
+  left: 4px;
+  display: inline-block;
+  width: 14px;
+  height: 8px;
+  background-color: transparent;
+  content: '';
+  -webkit-transform: rotate(-45deg);
+     -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+       -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.check-box.type-checkbox.skin-1:after {
+  position: absolute;
+  bottom: 12px;
+  left: 5px;
+  display: inline-block;
+  width: 13px;
+  height: 6px;
+  background-color: transparent;
+  content: '';
+  -webkit-transform: rotate(-45deg);
+     -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+       -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.check-box.type-checkbox.skin-1:hover:before {
+  background-color: #fff;
+}
+
+.check-box.type-checkbox.skin-1:hover:after {
+  background-color: #ddd;
+}
+
+.check-box.type-checkbox.skin-1.check-checked {
+  background-color: #27acd8;
+}
+
+.check-box.type-checkbox.skin-1.check-checked:before {
+  background-color: #fff;
+}
+
+.check-box.type-checkbox.skin-1.check-checked:after {
+  background-color: #27acd8;
+}
+
+.check-box.type-checkbox.skin-1.check-disabled {
+  cursor: default;
+  background-color: #eee;
+}
+
+.check-box.type-checkbox.skin-1.check-disabled:before {
+  background-color: transparent;
+}
+
+.check-box.type-checkbox.skin-1.check-disabled:after {
+  background-color: transparent;
+}
+
+.check-box.type-checkbox.skin-1.check-disabled.check-checked {
+  cursor: default;
+  background-color: #eee;
+}
+
+.check-box.type-checkbox.skin-1.check-disabled.check-checked:before {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.check-box.type-checkbox.skin-1.check-disabled.check-checked:after {
+  background-color: #eee;
+}
+
+.check-box.type-radio.skin-1 {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  background-color: #ddd;
+  border: 7px solid #ddd;
+  -webkit-border-radius: 23px 23px 23px 23px;
+     -moz-border-radius: 23px 23px 23px 23px;
+          border-radius: 23px 23px 23px 23px;
+}
+
+.check-box.type-radio.skin-1:hover {
+  background-color: #fff;
+}
+
+.check-box.type-radio.skin-1.check-checked {
+  background-color: #fff;
+  border-color: #27acd8;
+}
+
+.check-box.type-radio.skin-1.check-disabled {
+  cursor: default;
+  background-color: #eee;
+  border-color: #eee;
+}
+
+.check-box.type-radio.skin-1.check-disabled.check-checked {
+  cursor: default;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-color: #eee;
 }
 
 label {

@@ -45,7 +45,7 @@
             this.$label = null;
         }
 
-        this.$input.addClass(this.namespace).addClass(this.namespace + '-' + this.options.skin);
+        //this.$input.addClass(this.namespace).addClass(this.namespace + '-' + this.options.skin);
 
         this.init();
     };
@@ -59,12 +59,20 @@
             this.$check = $(tpl);
             this.$input.css({display: 'none'}).after(this.$check);
 
+
+            if (this.options.type === 'radio') {
+                this.$check.addClass('type-radio');
+            } else {
+                this.$check.addClass('type-checkbox');
+            }
+
+            this.$check.addClass(this.options.skin);
             this.$check.add(this.$label).on('click',function() {
                 
                 if (self.enable === false) {
                     return false;
                 }
-                console.log(self.options.type);
+        
                 $.proxy(self.trigger,self)(self.options.type);
                 return false;
             });
@@ -155,7 +163,7 @@
     Check.defaults = {
         namespace: 'check',
 
-        skin: 'simple',
+        skin: 'skin-1',
 
         state: 'enabled', // null string means enable the check, 'disable' means disable the check
         checked: 'checked',  // null string means unchecked, 'checked' means checked
