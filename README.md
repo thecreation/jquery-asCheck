@@ -2,8 +2,8 @@
 
 jquery-check was designed to make implementation as easy as possible. Before implementing, make sure you meet the minimum requirements.
 
-
-![check](/demo/img/style1.JPG,'check style')
+![image][]
+ [image]: /amazingSurge/jquery-check/blob/master/demo/img/style1.JPG
 
 ### Requirements
 - 	jQuery 1.4.x or greater
