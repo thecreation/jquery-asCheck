@@ -1,0 +1,119 @@
+
+//radio --  skin-4
+//==============================================
+//var
+//==============================================
+@radioSkin4BgColor: #000;
+@radioSkin4BgFirstColor: lighten(@radioSkin4BgColor,18%);
+@radioSkin4BgLastColor: lighten(@radioSkin4BgColor,13.5%);
+@radioSkin4BoxShadowColor: lighten(@radioSkin4BgColor,100%);
+@radioSkin4BoxShadowOutColor: fade(@radioSkin4BoxShadowColor,10%);
+@radioSkin4BoxShadowInsetColor: fade(@radioSkin4BgColor,40%);
+@radioSkin4CheckedAfterBgColor: #bce841;
+@radioSkin4CheckedAfterBgFirstColor: @radioSkin4CheckedAfterBgColor;
+@radioSkin4CheckedAfterBgLastColor: darken(@radioSkin4CheckedAfterBgColor,17.2%);
+@radioSkin4CheckedAfterBoxShadowColor: fade(@radioSkin4BgColor,80%);
+@radioSkin4CheckedBeforeBoxShadowColor: @radioSkin4CheckedAfterBgColor;
+@radioSkin4DisabledBgFirstColor: lighten(@radioSkin4BgColor,26.5%);
+@radioSkin4DisabledBgLastColor: lighten(@radioSkin4BgColor,20%);
+@radioSkin4DisabledBoxShadowColor: @radioSkin4BoxShadowOutColor;
+@radioSkin4Disabled_CheckedBgFirstColor: @radioSkin4DisabledBgFirstColor;
+@radioSkin4Disabled_CheckedBgLastColor: @radioSkin4DisabledBgLastColor;
+@radioSkin4Disabled_CheckedBoxShadowColor: @radioSkin4BoxShadowOutColor;
+@radioSkin4Disabled_CheckedBeforeBgColor: lighten(@radioSkin4BgColor,33.5%);;
+@radioSkin4Disabled_CheckedBeforeBoxShadowColor: fade(@radioSkin4BoxShadowColor,25%);
+@radioSkin4Disabled_CheckedAfterBgColor: @radioSkin4CheckedAfterBgColor;
+@radioSkin4Disabled_CheckedAfterBgFirstColor: lighten(@radioSkin4BgColor,60%);
+@radioSkin4Disabled_CheckedAfterBgLastColor: lighten(@radioSkin4BgColor,46.5%);
+@radioSkin4Disabled_CheckedAfterBoxShadowColor: @radioSkin4BoxShadowInsetColor;
+
+@radioSkin4Size: 24px;
+@radioSkin4Width: @radioSkin4Size;
+@radioSkin4Height: @radioSkin4Size;
+@radioSkin4BorderRadiusSize: @radioSkin4Size + 1;
+@radioSkin4BeforeWidth: @radioSkin4Size * 0.417;
+@radioSkin4BeforeHeight: @radioSkin4Size * 0.417;
+@radioSkin4BeforeMarginTop: @radioSkin4BeforeHeight * (-0.5);
+@radioSkin4BeforeMarginLeft: @radioSkin4BeforeWidth * (-0.5);
+@radioSkin4BeforeBorderRadiusSize: @radioSkin4BeforeWidth + 1;
+@radioSkin4AfterWidth: @radioSkin4BeforeWidth;
+@radioSkin4AfterHeight: @radioSkin4BeforeHeight;
+@radioSkin4AfterMarginTop: @radioSkin4BeforeMarginTop;
+@radioSkin4AfterMarginLeft: @radioSkin4BeforeMarginLeft;
+@radioSkin4AfterBorderRadiusSize: @radioSkin4BeforeBorderRadiusSize;
+//==============================================
+.check-box.type-radio.skin-4 {
+	position: relative;
+	display: inline-block;
+	width: @radioSkin4Width;
+	height: @radioSkin4Height;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	background-color: @radioSkin4BgColor;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJlMmUyZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMjIyMjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	.background-vertical (@radioSkin4BgFirstColor,@radioSkin4BgLastColor);
+	cursor: pointer;
+	overflow: hidden;
+	.border-radius (@radioSkin4BorderRadiusSize);
+	.box-shadow-bothWay (0,1px,0,0,@radioSkin4BoxShadowOutColor,3px,3px,6px,0,@radioSkin4BoxShadowInsetColor);
+	&:before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: inline-block;
+		content: '';
+		width: @radioSkin4BeforeWidth;
+		height: @radioSkin4BeforeHeight;
+		margin-top: @radioSkin4BeforeMarginTop;
+		margin-left: @radioSkin4BeforeMarginLeft;
+		background-color: transparent;
+		.border-radius (@radioSkin4BeforeBorderRadiusSize);
+	}
+	&:after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: inline-block;
+		content: '';
+		width: @radioSkin4AfterWidth;
+		height: @radioSkin4AfterHeight;
+		margin-top: @radioSkin4AfterMarginTop;
+		margin-left: @radioSkin4AfterMarginLeft;
+		background-color: transparent;
+		.border-radius (@radioSkin4AfterBorderRadiusSize);
+	}
+	&.check-checked {
+		&:before {
+			.box-shadow (0,0,8px,1px,@radioSkin4CheckedBeforeBoxShadowColor);
+		}
+		&:after {
+			background-color: @radioSkin4CheckedAfterBgColor;
+			background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIzMCUiIHN0b3AtY29sb3I9IiNiY2U4NDEiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOGZiYzAwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+			.background-vertical (@radioSkin4CheckedAfterBgFirstColor,@radioSkin4CheckedAfterBgLastColor,30%,100%);
+			.box-shadow (0,2px,3px,0,@radioSkin4CheckedAfterBoxShadowColor);
+		}
+	}
+	&.check-disabled {
+		cursor: default;
+		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ0NDQ0NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMzMzMzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		.background-vertical (@radioSkin4DisabledBgFirstColor,@radioSkin4DisabledBgLastColor);
+		.box-shadow (0,1px,0,0,@radioSkin4DisabledBoxShadowColor);
+	}
+	&.check-disabled.check-checked {
+		cursor: default;
+		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ0NDQ0NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMzMzMzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		.background-vertical (@radioSkin4Disabled_CheckedBgFirstColor,@radioSkin4Disabled_CheckedBgLastColor);
+		.box-shadow (0,1px,0,0,@radioSkin4Disabled_CheckedBoxShadowColor);
+		&:before {
+			.box-shadow (0,0,8px,1px,@radioSkin4Disabled_CheckedBeforeBoxShadowColor);
+		}
+		&:after {
+			background-color: @radioSkin4Disabled_CheckedAfterBgColor;
+			background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIzMCUiIHN0b3AtY29sb3I9IiM5OTk5OTkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNzc3Nzc3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+			.background-vertical (@radioSkin4Disabled_CheckedAfterBgFirstColor,@radioSkin4Disabled_CheckedAfterBgLastColor,30%,100%);
+			.box-shadow (0,2px,3px,0,@radioSkin4Disabled_CheckedAfterBoxShadowColor);
+		}
+	}
+}
+//==============================================

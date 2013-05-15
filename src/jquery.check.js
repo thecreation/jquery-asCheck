@@ -88,7 +88,7 @@
                 if (this.checked === 'checked') {
                     return false;
                 }
-                
+
                 this.$group.each(function(i,v) {
                     if ($(v).prop('checked') === true) {
                         $(v).data('check').set('unchecked');
@@ -134,8 +134,6 @@
                     this.$check.removeClass(this.classname.checked);
                     this.$input.prop('checked',false);                 
                     if (this.options.type === 'checkbox' && typeof this.options.onChange === 'function') {
-                        console.log('unchecked')
-                        console.log(this.checked)
                         this.$input.trigger('change');
                         this.options.onChange(this);
                     }

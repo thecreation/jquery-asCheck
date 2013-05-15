@@ -1,0 +1,51 @@
+
+//radio--  skin-1
+//==============================================
+//var
+//==============================================
+@radioSkin1BgColor: #ddd;
+@radioSkin1BdColor: @radioSkin1BgColor;
+@radioSkin1HoverBgColor: lighten(@radioSkin1BgColor,100%);
+@radioSkin1CheckedBgColor: @radioSkin1HoverBgColor;
+@radioSkin1CheckedBdColor: #27acd8;
+@radioSkin1DisabledBgColor: lighten(@radioSkin1BgColor,6.8%);
+@radioSkin1DisabledBdColor: @radioSkin1DisabledBgColor;
+@radioSkin1Disabled_CheckedBgColor: fade(@radioSkin1HoverBgColor,50%);
+@radioSkin1Disabled_CheckedBdColor: @radioSkin1DisabledBgColor;
+
+@radioSkin1Size: 8px;
+@radioSkin1Width: @radioSkin1Size;
+@radioSkin1Height: @radioSkin1Size;
+@radioSkin1BorderSize: @radioSkin1Size - 1;
+@radioSkin1BorderRadiusSize: @radioSkin1Size * 3 - 2;
+//==============================================
+.check-box.type-radio.skin-1 {
+	display: inline-block;
+	width: @radioSkin1Width;
+	height: @radioSkin1Height;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	background-color: @radioSkin1BgColor;
+	border: @radioSkin1BorderSize solid @radioSkin1BdColor;
+	cursor: pointer;
+	.border-radius (@radioSkin1BorderRadiusSize);
+	&:hover {
+		background-color: @radioSkin1HoverBgColor;
+	}
+	&.check-checked {
+		background-color: @radioSkin1CheckedBgColor;
+		border-color: @radioSkin1CheckedBdColor;
+	}
+	&.check-disabled {
+		background-color: @radioSkin1DisabledBgColor;
+		border-color: @radioSkin1DisabledBdColor;
+		cursor: default;
+	}
+	&.check-disabled.check-checked {
+		background-color: @radioSkin1Disabled_CheckedBgColor;
+		border-color: @radioSkin1Disabled_CheckedBdColor;
+		cursor: default;
+	}
+}
+//==============================================

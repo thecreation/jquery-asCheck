@@ -1,0 +1,85 @@
+//checkbox --  skin-3
+//==============================================
+//var
+//==============================================
+@checkboxSkin3BgColor: #fff;
+@checkboxSkin3BdColor: darken(@checkboxSkin3BgColor,18.5%);
+@checkboxSkin3CheckedBdColor: #7ebdcc;
+@checkboxSkin3HoverBdColor: @checkboxSkin3CheckedBdColor;
+@checkboxSkin3CheckedBeforeBgColor: @checkboxSkin3CheckedBdColor;
+@checkboxSkin3CheckedAfterBgColor: @checkboxSkin3CheckedBeforeBgColor;
+@checkboxSkin3DisabledBdColor: darken(@checkboxSkin3BgColor,8%);
+@checkboxSkin3Disabled_CheckedBdColor: @checkboxSkin3DisabledBdColor;
+@checkboxSkin3Disabled_CheckedBeforeBgColor: @checkboxSkin3DisabledBdColor;
+@checkboxSkin3Disabled_CheckedAfterBgColor: @checkboxSkin3Disabled_CheckedBeforeBgColor;
+
+@checkboxSkin3Size: 18px;
+@checkboxSkin3Width: @checkboxSkin3Size;
+@checkboxSkin3Height: @checkboxSkin3Size;
+@checkboxSkin3BeforeWidth: @checkboxSkin3Size * 0.166;
+@checkboxSkin3BeforeHeight: @checkboxSkin3Size * 0.364;
+@checkboxSkin3AfterWidth: @checkboxSkin3Size * 0.736;
+@checkboxSkin3AfterHeight: @checkboxSkin3Size * 0.136;
+//==============================================
+.check-box.type-checkbox.skin-3 {
+	position: relative;
+	display: inline-block;
+	width: @checkboxSkin3Width;
+	height: @checkboxSkin3Height;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	background-color: @checkboxSkin3BgColor;
+	border: 2px solid @checkboxSkin3BdColor;
+	cursor: pointer;
+	.border-radius (3px);
+	&:before {
+		position: absolute;
+		left: 19%;
+		bottom: 15%;
+		display: inline-block;
+		content: '';
+		width: @checkboxSkin3BeforeWidth;
+		height: @checkboxSkin3BeforeHeight;
+		background-color: transparent;
+		.rotate (-45deg);
+	}
+	&:after {
+		position: absolute;
+		left: 23%;
+		bottom: 39%;
+		display: inline-block;
+		content: '';
+		width: @checkboxSkin3AfterWidth;
+		height: @checkboxSkin3AfterHeight;
+		background-color: transparent;
+		.rotate (-45deg);
+	}
+	&:hover {
+		border-color: @checkboxSkin3HoverBdColor;
+	}
+	&.check-checked {
+		border-color: @checkboxSkin3CheckedBdColor;
+		&:before {
+			background-color: @checkboxSkin3CheckedBeforeBgColor;
+		}
+		&:after {
+			background-color: @checkboxSkin3CheckedAfterBgColor;
+		}
+	}
+	&.check-disabled {
+		border-color: @checkboxSkin3DisabledBdColor;
+		cursor: default;
+	}
+	&.check-disabled.check-checked {
+		border-color: @checkboxSkin3Disabled_CheckedBdColor;
+		cursor: default;
+		&:before {
+			background-color: @checkboxSkin3Disabled_CheckedBeforeBgColor;
+		}
+		&:after {
+			background-color: @checkboxSkin3Disabled_CheckedAfterBgColor;
+		}
+	}
+}
+//==============================================

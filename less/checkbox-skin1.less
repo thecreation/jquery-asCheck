@@ -1,0 +1,94 @@
+//checkbox --  skin-1
+//==============================================
+//var
+//==============================================
+@checkboxSkin1BgColor: #ddd;
+@checkboxSkin1HoverBeforeBgColor: lighten(@checkboxSkin1BgColor,100%);
+@checkboxSkin1HoverAfterBgColor: @checkboxSkin1HoverBeforeBgColor;
+@checkboxSkin1CheckedBgColor: #27acd8;
+@checkboxSkin1CheckedBeforeBgColor: @checkboxSkin1HoverBeforeBgColor;
+@checkboxSkin1CheckedAfterBgColor: @checkboxSkin1HoverBeforeBgColor;
+@checkboxSkin1DisabledBgColor: lighten(@checkboxSkin1BgColor,6.8%);
+@checkboxSkin1Disabled_CheckedBgColor: @checkboxSkin1DisabledBgColor;
+@checkboxSkin1Disabled_CheckedBeforeBgColor: fade(@checkboxSkin1HoverBeforeBgColor,50%);
+@checkboxSkin1Disabled_CheckedAfterBgColor: @checkboxSkin1Disabled_CheckedBeforeBgColor;
+
+@checkboxSkin1Size: 22px;
+@checkboxSkin1Width: @checkboxSkin1Size;
+@checkboxSkin1Height: @checkboxSkin1Size;
+@checkboxSkin1BeforeWidth: @checkboxSkin1Size * 0.136;
+@checkboxSkin1BeforeHeight: @checkboxSkin1Size * 0.364;
+@checkboxSkin1AfterWidth: @checkboxSkin1Size * 0.636;
+@checkboxSkin1AfterHeight: @checkboxSkin1Size * 0.136;
+//==============================================
+.check-box.type-checkbox.skin-1 {
+	position: relative;
+	display: inline-block;
+	width: @checkboxSkin1Width;
+	height: @checkboxSkin1Height;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	background-color: @checkboxSkin1BgColor;
+	cursor: pointer;
+	&:before {
+		position: absolute;
+		left: 23%;
+		bottom: 18%;
+		display: inline-block;
+		content: '';
+		width: @checkboxSkin1BeforeWidth;
+		height: @checkboxSkin1BeforeHeight;
+		background-color: transparent;
+		.rotate (-45deg);
+	}
+	&:after {
+		position: absolute;
+		left: 27%;
+		bottom: 39%;
+		display: inline-block;
+		content: '';
+		width: @checkboxSkin1AfterWidth;
+		height: @checkboxSkin1AfterHeight;
+		background-color: transparent;
+		.rotate (-45deg);
+	}
+	&:hover {
+		&:before {
+			background-color: @checkboxSkin1HoverBeforeBgColor;
+		}
+		&:after {
+			background-color: @checkboxSkin1HoverAfterBgColor;
+		}
+	}
+	&.check-checked {
+		background-color: @checkboxSkin1CheckedBgColor;
+		&:before {
+			background-color: @checkboxSkin1CheckedBeforeBgColor;
+		}
+		&:after {
+			background-color: @checkboxSkin1CheckedAfterBgColor;
+		}
+	}
+	&.check-disabled {
+		background-color: @checkboxSkin1DisabledBgColor;
+		cursor: default;
+		&:before {
+			background-color: transparent;
+		}
+		&:after {
+			background-color: transparent;
+		}
+	}
+	&.check-disabled.check-checked {
+		background-color: @checkboxSkin1Disabled_CheckedBgColor;
+		cursor: default;
+		&:before {
+			background-color: @checkboxSkin1Disabled_CheckedBeforeBgColor;
+		}
+		&:after {
+			background-color: @checkboxSkin1Disabled_CheckedAfterBgColor;
+		}
+	}
+}
+//==============================================
