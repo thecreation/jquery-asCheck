@@ -113,6 +113,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('css', ['recess']);
 
-    grunt.registerTask('js', ['jsbeautifier']);
+    grunt.registerTask('js', ['jshint', 'jsbeautifier']);
 
 };

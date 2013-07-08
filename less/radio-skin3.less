@@ -6,66 +6,39 @@
 @radioSkin3BgColor: #fff;
 @radioSkin3BdColor: darken(@radioSkin3BgColor,18.5%);
 @radioSkin3CheckedBdColor: #7ebdcc;
-@radioSkin3HoverBdColor: @radioSkin3CheckedBdColor;
-@radioSkin3CheckedBeforeBgColor: @radioSkin3CheckedBdColor;
 @radioSkin3DisabledBdColor: darken(@radioSkin3BgColor,8%);
-@radioSkin3Disabled_CheckedBdColor: @radioSkin3DisabledBdColor;
-@radioSkin3Disabled_CheckedBeforeBdColor: @radioSkin3DisabledBdColor;
 
 @radioSkin3Size: 18px;
-@radioSkin3Width: @radioSkin3Size;
-@radioSkin3Height: @radioSkin3Size;
-@radioSkin3BorderRadiusSize: @radioSkin3Size + 1;
-@radioSkin3BeforeWidth: @radioSkin3Size * 0.445;
-@radioSkin3BeforeHeight: @radioSkin3Size * 0.445;
-@radioSkin3BeforeMarginTop: @radioSkin3BeforeHeight * (-0.5);
-@radioSkin3BeforeMarginLeft: @radioSkin3BeforeWidth * (-0.5);
-@radioSkin3BeforeBorderRadiusSize: @radioSkin3BeforeWidth + 1;
 //==============================================
 .check-box.type-radio.skin-3 {
 	position: relative;
 	display: inline-block;
-	width: @radioSkin3Width;
-	height: @radioSkin3Height;
+	width: @radioSkin3Size;
+	height: @radioSkin3Size;
 	margin: 0;
 	padding: 0;
 	vertical-align: middle;
 	background-color: @radioSkin3BgColor;
+	background-image: url("../image/check-radio.png");
+	background-position: 18px 0;
 	border: 2px solid @radioSkin3BdColor;
 	cursor: pointer;
-	.border-radius (@radioSkin3BorderRadiusSize);
-	&:before {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		display: inline-block;
-		content: '';
-		width: @radioSkin3BeforeWidth;
-		height: @radioSkin3BeforeHeight;
-		margin-top: @radioSkin3BeforeMarginTop;
-		margin-left: @radioSkin3BeforeMarginLeft;
-		background-color: transparent;
-		.border-radius (@radioSkin3BeforeBorderRadiusSize);
-	}
+	.border-radius (19px);
 	&:hover {
-		border-color: @radioSkin3HoverBdColor;
+		border-color: @radioSkin3CheckedBdColor;
 	}
 	&.check-checked {
+		background-position: -90px -77px;
 		border-color: @radioSkin3CheckedBdColor;
-		&:before {
-			background-color: @radioSkin3CheckedBeforeBgColor;
-		}
 	}
 	&.check-disabled {
 		border-color: @radioSkin3DisabledBdColor;
 		cursor: default;
 	}
 	&.check-disabled.check-checked {
-		border-color: @radioSkin3Disabled_CheckedBdColor;
+		background-position: -118px -76px;
+		border-color: @radioSkin3DisabledBdColor;
 		cursor: default;
-		&:before {
-			background-color: @radioSkin3Disabled_CheckedBeforeBdColor;
-		}
 	}
 }
 //==============================================

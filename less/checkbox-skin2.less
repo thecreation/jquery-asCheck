@@ -5,97 +5,53 @@
 //==============================================
 @checkboxSkin2BgColor: #fff;
 @checkboxSkin2BdColor: #d9d9d9;
-@checkboxSkin2BoxShadowColor: fade(@checkboxSkin2BgColor,10%);
-@checkboxSkin2BoxShadowInsetColor: fade(darken(@checkboxSkin2BgColor,100%),10%);
 @checkboxSkin2HoverBdColor: #7ebfee;
-@checkboxSkin2CheckedBoxShadowColor: lighten(@checkboxSkin2BgColor,100%);
-@checkboxSkin2CheckedBeforeBgColor: darken(@checkboxSkin2BgColor,100%);
-@checkboxSkin2CheckedAfterBdTopColor: #575c60;
-@checkboxSkin2CheckedHoverBdColor: @checkboxSkin2BdColor;
+@checkboxSkin2BoxShadowColor: lighten(@checkboxSkin2BgColor,100%);
+@checkboxSkin2BoxShadowInsetColor: darken(@checkboxSkin2BgColor,100%);
+@checkboxSkin2HoverBoxShadowInsetColor: darken(@checkboxSkin2HoverBdColor,3.3%);
 @checkboxSkin2DisabledBgColor: darken(@checkboxSkin2BgColor,3.7%);
 @checkboxSkin2DisabledBdColor: darken(@checkboxSkin2BgColor,8%);
-@checkboxSkin2DisabledBoxShadowColor: @checkboxSkin2CheckedBoxShadowColor;
-@checkboxSkin2Disabled_CheckedBgColor: @checkboxSkin2DisabledBgColor;
-@checkboxSkin2Disabled_CheckedBdColor: @checkboxSkin2DisabledBdColor;
-@checkboxSkin2Disabled_CheckedBoxShadowColor: @checkboxSkin2CheckedBoxShadowColor;
-@checkboxSkin2Disabled_CheckedBeforeBgColor: @checkboxSkin2BdColor;
-@checkboxSkin2Disabled_CheckedAfterBgColor: @checkboxSkin2BdColor;
 
 @checkboxSkin2Size: 14px;
-@checkboxSkin2Width: @checkboxSkin2Size;
-@checkboxSkin2Height: @checkboxSkin2Size;
-@checkboxSkin2BeforeWidth: @checkboxSkin2Size * 0.214;
-@checkboxSkin2BeforeHeight: @checkboxSkin2Size * 0.5;
-@checkboxSkin2AfterBdTopSize: @checkboxSkin2Size * 0.358;
-@checkboxSkin2AfterBdRightSize: @checkboxSkin2Size * 1.215;
-@checkboxSkin2AfterBdBottomSize: @checkboxSkin2Size * 0.215;
 //==============================================
 .check-box.type-checkbox.skin-2 {
 	position: relative;
 	display: inline-block;
-	width: @checkboxSkin2Width;
-	height: @checkboxSkin2Height;
+	width: @checkboxSkin2Size;
+	height: @checkboxSkin2Size;
 	margin: 0;
 	padding: 0;
 	vertical-align: middle;
 	background-color: @checkboxSkin2BgColor;
+	background-image: url("../image/check-radio.png");
+	background-position: 14px 0;
 	border: 1px solid @checkboxSkin2BdColor;
 	cursor: pointer;
 	.border-radius (3px);
-	.box-shadow-bothWay (0,0,2px,0,@checkboxSkin2BoxShadowColor,0,1px,1px,0,@checkboxSkin2BoxShadowInsetColor);
-	&:before {
-		position: absolute;
-		left: 14%;
-		bottom: 0;
-		display: inline-block;
-		content: '';
-		width: @checkboxSkin2BeforeWidth;
-		height: @checkboxSkin2BeforeHeight;
-		background-color: transparent;
-		.rotate (-45deg);
-	}
-	&:after {
-		position: absolute;
-		left: 18%;
-		bottom: 14%;
-		content: '';
-		border-top: @checkboxSkin2AfterBdTopSize solid transparent;
-		border-right: @checkboxSkin2AfterBdRightSize inset transparent;
-		border-bottom: @checkboxSkin2AfterBdBottomSize solid transparent;
-		.rotate (-45deg);
-	}
+	.box-shadow-bothWay (0,1px,1px,0,fade(@checkboxSkin2BgColor,10%),0,1px,1px,0,fade(@checkboxSkin2BoxShadowInsetColor,10%));
 	&:hover {
 		border-color: @checkboxSkin2HoverBdColor;
+		.box-shadow-bothWay (0,1px,8px,0,fade(@checkboxSkin2HoverBoxShadowInsetColor,30%),0,1px,1px,0,fade(@checkboxSkin2BoxShadowInsetColor,10%));
 	}
 	&.check-checked {
-		.box-shadow (1px,1px,0,0,@checkboxSkin2CheckedBoxShadowColor);
-		&:before {
-			background-color: @checkboxSkin2CheckedBeforeBgColor;
-		}
-		&:after {
-			border-top-color: @checkboxSkin2CheckedAfterBdTopColor;
-		}
+		.box-shadow (1px,1px,0,0,@checkboxSkin2BoxShadowColor);
+		background-position: -11px -51px;
 		&:hover {
-			border-color: @checkboxSkin2CheckedHoverBdColor;
+			border-color: @checkboxSkin2BdColor;
 		}
 	}
 	&.check-disabled {
 		background-color: @checkboxSkin2DisabledBgColor;
 		border-color: @checkboxSkin2DisabledBdColor;
 		cursor: default;
-		.box-shadow (1px,1px,0,0,@checkboxSkin2DisabledBoxShadowColor);
+		.box-shadow (1px,1px,0,0,@checkboxSkin2BoxShadowColor);
 	}
 	&.check-disabled.check-checked {
-		background-color: @checkboxSkin2Disabled_CheckedBgColor;
-		border-color: @checkboxSkin2Disabled_CheckedBdColor;
+		background-color: @checkboxSkin2DisabledBgColor;
+		background-position: -51px -51px;
+		border-color: @checkboxSkin2DisabledBdColor;
 		cursor: default;
-		.box-shadow (1px,1px,0,0,@checkboxSkin2Disabled_CheckedBoxShadowColor);
-		&:before {
-			background-color: @checkboxSkin2Disabled_CheckedBeforeBgColor;
-		}
-		&:after {
-			border-top-color: @checkboxSkin2Disabled_CheckedAfterBgColor;
-		}
+		.box-shadow (1px,1px,0,0,@checkboxSkin2BoxShadowColor);
 	}
 }
 //==============================================

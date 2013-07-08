@@ -2,93 +2,30 @@
 //==============================================
 //var
 //==============================================
-@checkboxSkin5BgColor: #fff;
-@checkboxSkin5BgFirstColor: darken(@checkboxSkin5BgColor,33.5%);
-@checkboxSkin5BgLastColor: darken(@checkboxSkin5BgColor,40%);
-@checkboxSkin5BoxShadowColor: darken(@checkboxSkin5BgColor,100%);
-@checkboxSkin5BoxShadowInsetColor: fade(@checkboxSkin5BoxShadowColor,30%);
-@checkboxSkin5CheckedBgFirstColor: #eea629;
-@checkboxSkin5CheckedBgLastColor: darken(@checkboxSkin5CheckedBgFirstColor,6.5%);
-@checkboxSkin5CheckedBeforeBgColor: lighten(@checkboxSkin5BgColor,100%);
-@checkboxSkin5CheckedAfterBgColor: @checkboxSkin5CheckedBeforeBgColor;
-@checkboxSkin5DisabledBgFirstColor: fade(@checkboxSkin5BgFirstColor,50%);
-@checkboxSkin5DisabledBgLastColor: fade(@checkboxSkin5BgLastColor,50%);
-@checkboxSkin5Disabled_CheckedBgFirstColor: @checkboxSkin5DisabledBgFirstColor;
-@checkboxSkin5Disabled_CheckedBgLastColor: @checkboxSkin5DisabledBgLastColor;
-@checkboxSkin5Disabled_CheckedBeforeBgColor: fade(@checkboxSkin5CheckedBeforeBgColor,50%);
-@checkboxSkin5Disabled_CheckedAfterBgColor: fade(@checkboxSkin5CheckedBeforeBgColor,50%);
-
-@checkboxSkin5Size: 22px;
-@checkboxSkin5Width: @checkboxSkin5Size;
-@checkboxSkin5Height: @checkboxSkin5Size;
-@checkboxSkin5BeforeWidth: @checkboxSkin5Size * 0.136;
-@checkboxSkin5BeforeHeight: @checkboxSkin5Size * 0.364;
-@checkboxSkin5AfterWidth: @checkboxSkin5Size * 0.636;
-@checkboxSkin5AfterHeight: @checkboxSkin5Size * 0.136;
+@checkboxSkin5Size: 24px;
 //==============================================
 .check-box.type-checkbox.skin-5 {
 	position: relative;
 	display: inline-block;
-	width: @checkboxSkin5Width;
-	height: @checkboxSkin5Height;
+	width: @checkboxSkin5Size;
+	height: @checkboxSkin5Size;
 	margin: 0;
 	padding: 0;
 	vertical-align: middle;
 	background-color: #fff;
-	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FhYWFhYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5OTk5OTkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	.background-vertical (@checkboxSkin5BgFirstColor,@checkboxSkin5BgLastColor);
-	.box-shadow-inset (0,1px,3px,0,@checkboxSkin5BoxShadowInsetColor);
-	.border-radius (5px);
+	background-image: url("../image/check-radio.png");
+	background-position: -9px -246px;
 	cursor: pointer;
-	&:before {
-		position: absolute;
-		left: 23%;
-		bottom: 18%;
-		display: inline-block;
-		content: '';
-		width: @checkboxSkin5BeforeWidth;
-		height: @checkboxSkin5BeforeHeight;
-		background-color: transparent;
-		.rotate (-45deg);
-	}
-	&:after {
-		position: absolute;
-		left: 27%;
-		bottom: 39%;
-		display: inline-block;
-		content: '';
-		width: @checkboxSkin5AfterWidth;
-		height: @checkboxSkin5AfterHeight;
-		background-color: transparent;
-		.rotate (-45deg);
-	}
 	&.check-checked {
-		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlYTYyOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNDlkMWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-		.background-vertical (@checkboxSkin5CheckedBgFirstColor,@checkboxSkin5CheckedBgLastColor);
-		&:before {
-			background-color: @checkboxSkin5CheckedBeforeBgColor;
-		}
-		&:after {
-			background-color: @checkboxSkin5CheckedAfterBgColor;
-		}
+		background-position: -46px -246px;
 	}
 	&.check-disabled {
+		background-position: -86px -245px;
 		cursor: default;
-		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FhYWFhYSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzk5OTk5OSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-		.background-vertical (@checkboxSkin5DisabledBgFirstColor,@checkboxSkin5DisabledBgLastColor);
-		.box-shadow-none;
 	}
 	&.check-disabled.check-checked {
+		background-position: -127px -247px;
 		cursor: default;
-		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FhYWFhYSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzk5OTk5OSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-		.background-vertical (@checkboxSkin5Disabled_CheckedBgFirstColor,@checkboxSkin5Disabled_CheckedBgLastColor);
-		.box-shadow-none;
-		&:before {
-			background-color: @checkboxSkin5Disabled_CheckedBeforeBgColor;
-		}
-		&:after {
-			background-color: @checkboxSkin5Disabled_CheckedAfterBgColor;
-		}
 	}
 }
 //==============================================
