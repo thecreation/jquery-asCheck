@@ -24,8 +24,8 @@
         this.checked = this.$input.prop('checked') ? 'checked' : 'unchecked';
         this.state = this.$input.prop('disabled') ? 'disabled' : 'enabled';
         this.classname = {
-            checked: this.namespace + '-checked',
-            disabled: this.namespace + '-disabled'
+            checked: this.namespace + '_checked',
+            disabled: this.namespace + '_disabled'
         };
 
         // enable flag
