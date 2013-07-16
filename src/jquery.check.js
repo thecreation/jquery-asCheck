@@ -54,7 +54,7 @@
         constructor: Check,
         init: function() {
             var self = this,
-                tpl = '<span class="' + this.namespace + '-box"></span>';
+                tpl = '<span class="' + this.namespace + '"></span>';
 
             this.$check = $(tpl);
             this.$input.css({
@@ -63,9 +63,9 @@
 
 
             if (this.options.type === 'radio') {
-                this.$check.addClass('type-radio');
+                this.$check.addClass(this.namespace + '_radio');
             } else {
-                this.$check.addClass('type-checkbox');
+                this.$check.addClass(this.namespace + '-checkbox');
             }
 
             this.$check.addClass(this.options.skin);
