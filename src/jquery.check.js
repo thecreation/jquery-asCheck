@@ -176,7 +176,7 @@
     Check.defaults = {
         namespace: 'check',
 
-        skin: 'skin-1',
+        skin: null,
 
         state: 'enabled', // null string means enable the check, 'disable' means disable the check
         checked: 'checked', // null string means unchecked, 'checked' means checked
