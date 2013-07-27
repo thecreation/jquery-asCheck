@@ -1,7 +1,7 @@
 {
-  "name": "jquery-choice",
+  "name": "jquery-check",
   "version": "0.1.1",
-  "main": "dist/jquery-choice.js",
+  "main": "dist/jquery-check.js",
   "ignore": [
     "**/.*",
     "node_modules",
