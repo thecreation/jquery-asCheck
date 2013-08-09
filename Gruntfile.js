@@ -30,7 +30,6 @@ module.exports = function(grunt) {
                 dest: 'dist/<%= pkg.name %>.min.js'
             },
         },
-
         jshint: {
             gruntfile: {
                 options: {
