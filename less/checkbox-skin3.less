@@ -9,7 +9,7 @@
 
 @checkboxSkin3Size: 18px;
 //==============================================
-.check-box.type-checkbox.skin-3 {
+.check_checkbox.check_skin-3 {
 	position: relative;
 	display: inline-block;
 	width: @checkboxSkin3Size;
@@ -18,7 +18,7 @@
 	padding: 0;
 	vertical-align: middle;
 	background-color: @checkboxSkin3BgColor;
-	background-image: url("../image/check-radio.png");
+	background-image: url("../img/check-radio.png");
 	background-position: 18px 0;
 	border: 2px solid @checkboxSkin3BdColor;
 	cursor: pointer;
@@ -26,15 +26,15 @@
 	&:hover {
 		border-color: @checkboxSkin3CheckedBdColor;
 	}
-	&.check-checked {
+	&.check_checked {
 		background-position: -9px -78px;
 		border-color: @checkboxSkin3CheckedBdColor;
 	}
-	&.check-disabled {
+	&.check_disabled {
 		border-color: @checkboxSkin3DisabledBdColor;
 		cursor: default;
 	}
-	&.check-disabled.check-checked {
+	&.check_disabled.check_checked {
 		background-position: -49px -78px;
 		border-color: @checkboxSkin3DisabledBdColor;
 		cursor: default;

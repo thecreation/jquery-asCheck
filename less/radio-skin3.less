@@ -10,7 +10,7 @@
 
 @radioSkin3Size: 18px;
 //==============================================
-.check-box.type-radio.skin-3 {
+.check_radio.check_skin-3 {
 	position: relative;
 	display: inline-block;
 	width: @radioSkin3Size;
@@ -19,7 +19,7 @@
 	padding: 0;
 	vertical-align: middle;
 	background-color: @radioSkin3BgColor;
-	background-image: url("../image/check-radio.png");
+	background-image: url("../img/check-radio.png");
 	background-position: 18px 0;
 	border: 2px solid @radioSkin3BdColor;
 	cursor: pointer;
@@ -27,15 +27,15 @@
 	&:hover {
 		border-color: @radioSkin3CheckedBdColor;
 	}
-	&.check-checked {
+	&.check_checked {
 		background-position: -90px -77px;
 		border-color: @radioSkin3CheckedBdColor;
 	}
-	&.check-disabled {
+	&.check_disabled {
 		border-color: @radioSkin3DisabledBdColor;
 		cursor: default;
 	}
-	&.check-disabled.check-checked {
+	&.check_disabled.check_checked {
 		background-position: -118px -76px;
 		border-color: @radioSkin3DisabledBdColor;
 		cursor: default;

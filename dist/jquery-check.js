@@ -1,4 +1,4 @@
-/*! jQuery Check - v0.1.0 - 2013-08-09
+/*! jQuery Check - v0.1.0 - 2013-08-11
 * https://github.com/amazingSurge/jquery-check
 * Copyright (c) 2013 amazingSurge; Licensed GPL */
 (function($) {
@@ -9,25 +9,24 @@
 
         // options
         var meta_data = {
-            type: this.$input.attr('type'),
             group: this.$input.attr('name')
         };
 
         this.options = $.extend({}, Check.defaults, options, meta_data);
         this.namespace = this.options.namespace;
+        this.type = this.$input.attr('type');
 
-        this.checked = this.$input.prop('checked') ? 'checked' : 'unchecked';
-        this.state = this.$input.prop('disabled') ? 'disabled' : 'enabled';
+        this.checked = this.$input.prop('checked');
+        this.disabled = this.$input.prop('disabled');
         this.classname = {
             checked: this.namespace + '_checked',
             disabled: this.namespace + '_disabled'
         };
 
         // enable flag
-        this.enable = this.$input.prop('disabled') ? false : true;
         this.intial = false;
 
-        if (this.options.type === 'radio') {
+        if (this.type === 'radio') {
             this.$group = this.options.group === undefined ? this : $('input[name="' + this.options.group + '"]');
             //console.log(this.$group)
         }
@@ -39,8 +38,6 @@
         } else {
             this.$label = null;
         }
-
-        //this.$input.addClass(this.namespace).addClass(this.namespace + '-' + this.options.skin);
 
         this.init();
     };
@@ -57,54 +54,56 @@
             }).after(this.$check);
 
 
-            if (this.options.type === 'radio') {
+            if (this.type === 'radio') {
                 this.$check.addClass(this.namespace + '_radio');
             } else {
-                this.$check.addClass(this.namespace + '-checkbox');
+                this.$check.addClass(this.namespace + '_checkbox');
             }
 
-            this.$check.addClass(this.namespace + '_' + this.options.skin);
+            if (this.options.skin !== null) {
+                this.$check.addClass(this.namespace + '_' + this.options.skin);
+            }
+            
             this.$check.add(this.$label).on('click', function() {
-
-                if (self.enable === false) {
+                if (self.disabled === true) {
                     return false;
                 }
 
-                $.proxy(self.trigger, self)(self.options.type);
+                self.trigger.call(self, self.type);
                 return false;
             });
 
-            this.set(this.checked);
-            this.set(this.state);
+            this.set('checked', this.checked);
+            this.set('disabled', this.disabled);
 
             this.intial = true;
         },
         trigger: function(type) {
             if (type === 'radio') {
-                if (this.checked === 'checked') {
+                if (this.checked === true) {
                     return false;
                 }
 
                 this.$group.each(function(i, v) {
                     if ($(v).prop('checked') === true) {
-                        $(v).data('check').set('unchecked');
+                        $(v).data('check').set('checked', false);
                     }
                 });
-                this.set('checked');
+                this.set('checked', true);
             } else {
-                if (this.checked === 'checked') {
-                    this.set('unchecked');
+                if (this.checked === true) {
+                    this.set('checked', false);
                 } else {
-                    this.set('checked');
+                    this.set('checked', true);
                 }
             }
         },
         checked: function() {
-            this.set('checked');
+            this.set('checked', true);
             return this;
         },
         unchecked: function() {
-            this.set('unchecked');
+            this.set('checked', false);
             return this;
         },
 
@@ -112,57 +111,65 @@
             Public Method
          */
         
-        set: function(value) {
+        set: function(state, value) {
             if (this.intial === true) {
-                if (this.value === value) {
-                    return;
-                }
-                if (this.state === value) {
-                    return;
+                if (state === 'checked') {
+                    if (this.checked === value) {
+                        return;
+                    }
+                } else {
+                    if (this.disabled === value) {
+                        return;
+                    }
                 }
             }
 
-            switch (value) {
+            switch (state) {
                 case 'checked':
-                    this.checked = value;
-                    this.$check.addClass(this.classname.checked);
-                    this.$input.prop('checked', true);
-                    this.$input.trigger('change');
-                    if (typeof this.options.onChange === 'function') {
-                        this.options.onChange(this);
-                    }
-                    break;
-                case 'unchecked':
-                    this.checked = value;
-                    this.$check.removeClass(this.classname.checked);
-                    this.$input.prop('checked', false);
-                    if (this.options.type === 'checkbox' && typeof this.options.onChange === 'function') {
+                    if (value === true) {
+                        this.checked = value;
+                        this.$check.addClass(this.classname.checked);
+                        this.$input.prop('checked', true);
                         this.$input.trigger('change');
-                        this.options.onChange(this);
+                        if (typeof this.options.onChange === 'function') {
+                            this.options.onChange(this);
+                        }
+                    } 
+                    if (value === false) {
+                        this.checked = value;
+                        this.$check.removeClass(this.classname.checked);
+                        this.$input.prop('checked', false);
+                        if (this.type === 'checkbox' && typeof this.options.onChange === 'function') {
+                            this.$input.trigger('change');
+                            this.options.onChange(this);
+                        }
                     }
                     break;
                 case 'disabled':
-                    this.state = value;
-                    this.enabled = false;
-                    this.$check.addClass(this.classname.disabled);
-                    this.$input.prop('disabled', true);
-                    this.$input.trigger('disabled');
-                    break;
-                case 'enabled':
-                    this.state = value;
-                    this.enabled = true;
-                    this.$check.removeClass(this.classname.disabled);
-                    this.$input.prop('disabled', false);
-                    this.$input.trigger('enabled');
+                    if (value === true) {
+                        this.disabled = value;
+                        this.enabled = false;
+                        this.$check.addClass(this.classname.disabled);
+                        this.$input.prop('disabled', true);
+                        this.$input.trigger('disabled');
+                    } 
+                    if (value === false) {
+                        this.disabled = value;
+                        this.enabled = true;
+                        this.$check.removeClass(this.classname.disabled);
+                        this.$input.prop('disabled', false);
+                        this.$input.trigger('enabled');
+                    }
+
                     break;
             }
         },
         enable: function() {
-            this.set('enabled');
+            this.set('disabled', true);
             return this;
         },
         disable: function() {
-            this.set('disabled');
+            this.set('disabled', false);
             return this;
         }
     };
@@ -170,10 +177,9 @@
     Check.defaults = {
         namespace: 'check',
         skin: null,
-        state: 'enabled', 
-        checked: 'checked', 
-        type: 'checkbox', // checkbox , radio
 
+        disabled: false, 
+        checked: true, 
         onChange: function() {}
     };
 
