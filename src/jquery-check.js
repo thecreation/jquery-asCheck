@@ -29,7 +29,7 @@
         };
 
         // enable flag
-        this.intial = false;
+        this.initial = false;
 
         if (this.type === 'radio') {
             this.$group = this.options.group === undefined ? this : $('input[name="' + this.options.group + '"]');
@@ -81,7 +81,7 @@
             this.set('checked', this.checked);
             this.set('disabled', this.disabled);
 
-            this.intial = true;
+            this.initial = true;
         },
         trigger: function(type) {
             if (type === 'radio') {
@@ -117,7 +117,7 @@
          */
         
         set: function(state, value) {
-            if (this.intial === true) {
+            if (this.initial === true) {
                 if (state === 'checked') {
                     if (this.checked === value) {
                         return;
