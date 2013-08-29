@@ -22,7 +22,7 @@
         this.type = this.$input.attr('type');
 
         this.checked = this.$input.prop('checked');
-        this.disabled = this.$input.prop('disabled');
+        this.disabled = this.$input.prop('disabled') || this.options.disabled;
         this.classname = {
             checked: this.namespace + '_checked',
             disabled: this.namespace + '_disabled'
@@ -33,7 +33,6 @@
 
         if (this.type === 'radio') {
             this.$group = this.options.group === undefined ? this : $('input[name="' + this.options.group + '"]');
-            //console.log(this.$group)
         }
 
         var _id = this.$input.attr('id');
@@ -45,6 +44,7 @@
         }
 
         this.init();
+        this.$input.trigger('check::ready', this);
     };
 
     Check.prototype = {
@@ -58,7 +58,6 @@
                 display: 'none'
             }).after(this.$check);
 
-
             if (this.type === 'radio') {
                 this.$check.addClass(this.namespace + '_radio');
             } else {
@@ -68,8 +67,10 @@
             if (this.options.skin !== null) {
                 this.$check.addClass(this.namespace + '_' + this.options.skin);
             }
+
+            this.$input.trigger('check::init', this);
             
-            this.$check.add(this.$label).on('click', function() {
+            this.$check.add(this.$label).on('click.check', function() {
                 if (self.disabled === true) {
                     return false;
                 }
@@ -102,20 +103,7 @@
                     this.set('checked', true);
                 }
             }
-        },
-        checked: function() {
-            this.set('checked', true);
-            return this;
-        },
-        unchecked: function() {
-            this.set('checked', false);
-            return this;
-        },
-
-        /*
-            Public Method
-         */
-        
+        },       
         set: function(state, value) {
             if (this.initial === true) {
                 if (state === 'checked') {
@@ -135,7 +123,7 @@
                         this.checked = value;
                         this.$check.addClass(this.classname.checked);
                         this.$input.prop('checked', true);
-                        this.$input.trigger('change');
+                        this.$input.trigger('check::change', this);
                         if (typeof this.options.onChange === 'function') {
                             this.options.onChange(this);
                         }
@@ -145,7 +133,7 @@
                         this.$check.removeClass(this.classname.checked);
                         this.$input.prop('checked', false);
                         if (this.type === 'checkbox' && typeof this.options.onChange === 'function') {
-                            this.$input.trigger('change');
+                            this.$input.trigger('check::change', this);
                             this.options.onChange(this);
                         }
                     }
@@ -156,18 +144,27 @@
                         this.enabled = false;
                         this.$check.addClass(this.classname.disabled);
                         this.$input.prop('disabled', true);
-                        this.$input.trigger('disabled');
                     } 
                     if (value === false) {
                         this.disabled = value;
                         this.enabled = true;
                         this.$check.removeClass(this.classname.disabled);
                         this.$input.prop('disabled', false);
-                        this.$input.trigger('enabled');
                     }
-
                     break;
             }
+        },
+
+        /*
+            Public Method
+         */
+        check: function() {
+            this.set('checked', true);
+            return this;
+        },
+        uncheck: function() {
+            this.set('checked', false);
+            return this;
         },
         enable: function() {
             this.set('disabled', true);
@@ -176,6 +173,9 @@
         disable: function() {
             this.set('disabled', false);
             return this;
+        },
+        destory: function() {
+           this.$check.remove(); 
         }
     };
 
@@ -189,7 +189,6 @@
     };
 
     $.fn.check = function(options) {
-
         if (typeof options === 'string') {
             var method = options;
             var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
