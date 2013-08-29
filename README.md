@@ -1,13 +1,15 @@
 #jquery-check
 
-The powerful jQuery plugin that creates a check. <a href="http://amazingsurge.github.io/jquery-check/">Project page and demos</a><br />
+The powerful jQuery plugin that provide a easy used and customized checkbox. <a href="http://amazingsurge.github.io/jquery-check/">Project page and demos</a><br />
 Download: <a href="https://github.com/amazingSurge/jquery-check/archive/master.zip">jquery-check-master.zip</a>
 
 ***
 
 ## Features
 
+* **callbacks to handle changes** 
 * **Lightweight size** — 1 kb gzipped
+* **Saves changes to textarea, works carefully with any selectors** 
 
 ## Dependencies
 
@@ -64,59 +66,41 @@ $(".radio").check({
 
 ## Settings
 
-<table>
-    <thead>
-        <tr>
-            <th>Property</th>
-            <th>Default</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>namespace</td>
-            <td>'check'</td>
-            <td>Optional property, set a namspace for css class, for example, we have <code>.check_active</code> class for active effect, if namespace set to 'as-check', then it will be <code>.as-check_active</td>
-        </tr>
-        <tr>
-            <td>skin</td>
-            <td>null</td>
-            <td>Optional property, set transition effect, it works after you load   specified skin file</td>
-        </tr>
-        <tr>
-            <td>state</td>
-            <td>enable</td>
-            <td>Optional property, set input's disabled property</td>
-        </tr>
-        <tr>
-            <td>checked</td>
-            <td>'checked'</td>
-            <td>Optional property, set input's checked property</td>
-        </tr>
-        <tr>
-            <td>type</td>
-            <td>'checkbox'</td>
-            <td>Optional property, set input's type</td>
-        </tr>
-        <tr>
-            <td>Onchange</td>
-            <td>function(){}</td>
-            <td>callback after input's checked property is changed </td>
-        </tr>
-    </tbody>
-</table>
+```javascript
+{
+    //Optional property, set a namspace for css class, for example, we 
+    //have <code>.check_active</code> class for active effect, if
+    //namespace set to 'as-check', then it will be <code>.as-check_active
+    namespace: 'check',
+
+    //Optional property, set transition effect, it works after you load specified skin file
+    skin: null,
+
+    //Optional property, set input's disabled state
+    state: enable,
+
+    //Optional property, set input's checked property,if the value is 'checked',this input will be checked
+    checked: 'checked',
+
+    //Optional property, set input's type
+    type: 'checkbox',
+
+    //callback after input's state is changed
+    Onchange: function(）{}
+}
+```
 
 ## Public methods
 
 jquery check has different methods , we can use it as below :
 ```javascript
-// set element's property
+// set input's state
 $(".radio").check("set");
 
-// set input's disabled property to false
+// remove disabled state
 $(".radio").check("enable");
 
-// set input's disabled property to true
+// change input's state to disabled
 $(".radio").check("disable");
 ```
 
@@ -143,10 +127,7 @@ Mobile browsers (like Opera mini, Chrome mobile, Safari mobile, Android browser 
 
 | Version | Notes                                                            |
 |---------|------------------------------------------------------------------|
-|   0.1.x | ([compare][compare-1.1]) add history function                    |
 |     ... | ...                                                              |
-
-[compare-1.1]: https://github.com/amazingSurge/jquery-check/compare/v1.1.0...v1.2.0
 
 ## Author
 [amazingSurge](http://amazingSurge.com)
