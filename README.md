@@ -127,7 +127,7 @@ Mobile browsers (like Opera mini, Chrome mobile, Safari mobile, Android browser 
 
 | Version | Notes                                                            |
 |---------|------------------------------------------------------------------|
-|     ... | ...                                                              |
+|  v0.1.1 |  fix label hover issue                                           |
 
 ## Author
 [amazingSurge](http://amazingSurge.com)

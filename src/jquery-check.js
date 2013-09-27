@@ -25,7 +25,8 @@
         this.disabled = this.$input.prop('disabled') || this.options.disabled;
         this.classname = {
             checked: this.namespace + '_checked',
-            disabled: this.namespace + '_disabled'
+            disabled: this.namespace + '_disabled',
+            hover: this.namespace + '_hover'
         };
 
         // enable flag
@@ -76,6 +77,20 @@
                 }
 
                 self.trigger.call(self, self.type);
+                return false;
+            });
+
+            this.$check.add(this.$label).on('mouseenter.check',function() {
+                if (self.disabled === true) {
+                    return false;
+                }
+                self.$check.add(self.$label).addClass(self.classname.hover);
+                return false;
+            }).on('mouseleave.check', function() {
+                if (self.disabled === true) {
+                    return false;
+                }
+                self.$check.add(self.$label).removeClass(self.classname.hover);
                 return false;
             });
 
