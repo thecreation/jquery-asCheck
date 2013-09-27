@@ -1,0 +1,6 @@
+v0.1.1 fix label hover issue
+
+	A workaround can be a combination of
+		1, Setting a class hover (or whatever name) as well as the selector :hover in the CSS.
+		2, Calling .addClass("hover") to trigger CSS, and .trigger("hover") or .trigger("mouseenter") to trigger the JS.
+		3, Ensuring the mouseleave handler. or 2nd .hover() handler, clears the hover class if present.
