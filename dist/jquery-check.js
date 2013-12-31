@@ -1,4 +1,4 @@
-/*! jQuery Check - v0.1.0 - 2013-08-28
+/*! jQuery Check - v0.1.0 - 2013-12-31
 * https://github.com/amazingSurge/jquery-check
 * Copyright (c) 2013 amazingSurge; Licensed GPL */
 (function($) {
@@ -20,11 +20,12 @@
         this.disabled = this.$input.prop('disabled') || this.options.disabled;
         this.classname = {
             checked: this.namespace + '_checked',
-            disabled: this.namespace + '_disabled'
+            disabled: this.namespace + '_disabled',
+            hover: this.namespace + '_hover'
         };
 
         // enable flag
-        this.initial = false;
+        this.initialed = false;
 
         if (this.type === 'radio') {
             this.$group = this.options.group === undefined ? this : $('input[name="' + this.options.group + '"]');
@@ -74,10 +75,24 @@
                 return false;
             });
 
+            this.$check.add(this.$label).on('mouseenter.check',function() {
+                if (self.disabled === true) {
+                    return false;
+                }
+                self.$check.add(self.$label).addClass(self.classname.hover);
+                return false;
+            }).on('mouseleave.check', function() {
+                if (self.disabled === true) {
+                    return false;
+                }
+                self.$check.add(self.$label).removeClass(self.classname.hover);
+                return false;
+            });
+
             this.set('checked', this.checked);
             this.set('disabled', this.disabled);
 
-            this.initial = true;
+            this.initialed = true;
         },
         trigger: function(type) {
             if (type === 'radio') {
@@ -100,7 +115,7 @@
             }
         },       
         set: function(state, value) {
-            if (this.initial === true) {
+            if (this.initialed === true) {
                 if (state === 'checked') {
                     if (this.checked === value) {
                         return;
@@ -111,7 +126,6 @@
                     }
                 }
             }
-
             switch (state) {
                 case 'checked':
                     if (value === true) {
@@ -120,7 +134,7 @@
                         this.$input.prop('checked', true);
                         this.$input.trigger('check::change', this);
                         if (typeof this.options.onChange === 'function') {
-                            this.options.onChange(this);
+                            this.options.onChange(this.checked);
                         }
                     } 
                     if (value === false) {
@@ -129,7 +143,7 @@
                         this.$input.prop('checked', false);
                         if (this.type === 'checkbox' && typeof this.options.onChange === 'function') {
                             this.$input.trigger('check::change', this);
-                            this.options.onChange(this);
+                            this.options.onChange(this.checked);
                         }
                     }
                     break;
