@@ -176,10 +176,10 @@ $(".custom").check({
 
                         $('.radio-1').check({
                             skin: 'skin-2',
-                            onChange: function(instance) {
-                                var type = instance.options.type,
-                                    value = instance.$input.val(),
-                                    status = instance.checked;
+                            onChange: function(value) {
+                                var type = this.type,
+                                    value = this.$input.val(),
+                                    status = this.checked;
                                 $('<div> <span>type: </span>'+ type + ',' + '<span>value: </span>' + value + ',' + '<span>status: </span>' + status +'</div>').prependTo($('.content'));
                             }
                         });                        
@@ -322,60 +322,7 @@ $(".custom").check({
                 </script>
             </div>
         </section>   
-        <section>
-            <h4>Event</h4>
-            <div class="example">
-                <ul>
-                    <li>
-                        <input class="radio-4" type="radio" name="radiobox-4" id="male-41" value="male" /><label for="male-41" >Male</label>
-                    </li>
 
-                     <li>
-                        <input class="radio-4" type="radio" name="radiobox-4" id="male-42" value="female" /><label for="male-42" >Female</label>
-                    </li>
-
-                    <li>
-                        <input class="radio-4" type="radio" name="radiobox-4" id="male-43" value="male" disabled="disabled" /><label for="male-43" >checked disable</label>
-                    </li>
-
-                    <li>
-                        <input class="radio-4" type="radio" name="radiobox-4" id="male-44" value="male" disabled="disabled" /><label for="male-44" >checked disable</label>
-                    </li>
-                </ul>
-                <script>                   
-                    $(document).ready(function() {
-                        $('.radio-4').check({
-                            skin: 'skin-4'
-                        });                        
-                    });
-                </script>
-            </div>
-            <div class="example">
-                <ul>
-                    <li>
-                        <input class="checkbox-4" type="checkbox" id="male-45" value="male" /><label for="male-45" >Male</label>
-                    </li>
-                    <li>
-                        <input class="checkbox-4" type="checkbox" id="male-46" value="female" checked="checked" /><label for="male-46" >Male</label>
-                    </li>
-                    <li>
-                        <input class="checkbox-4" type="checkbox" id="male-47" value="male" disabled="disabled"/><label for="male-47" >checked disable</label>
-                    </li>
-                    <li>
-                        <input class="checkbox-4" type="checkbox" id="male-48" value="male" checked="checked" disabled="disabled" /><label for="male-48" >unchecked disable</label>
-                    </li>
-                </ul>
-                
-                <script>                   
-                    $(document).ready(function() {
-                        $('.checkbox-4').check({
-                            skin: 'skin-4'
-                        });  
-                    
-                    });
-                </script>
-            </div>
-        </section>  
 
         <section>
             <h4>Skin-5</h4>
@@ -401,10 +348,10 @@ $(".custom").check({
                     $(document).ready(function() {
                         $('.radio-5').check({
                             skin: 'skin-5',
-                            onChange: function(instance) {
-                                var type = instance.options.type,
-                                    value = instance.$input.val(),
-                                    status = instance.checked;
+                            onChange: function(value) {
+                                var type = this.options.type,
+                                    value = this.$input.val(),
+                                    status = this.checked;
                                 $('<div> <span>type: </span>'+ type + ',' + '<span>value: </span>' + value + ',' + '<span>status: </span>' + status +'</div>').prependTo($('.content'));
                             }
                         });                        
@@ -431,10 +378,10 @@ $(".custom").check({
                     $(document).ready(function() {
                         $('.checkbox-5').check({
                             skin: 'skin-5',
-                            onChange: function(instance) {
-                                var type = instance.options.type,
-                                    value = instance.$input.val(),
-                                    status = instance.checked;
+                            onChange: function(value) {
+                                var type = this.options.type,
+                                    value = this.$input.val(),
+                                    status = this.checked;
                                 $('<div> <span>type: </span>'+ type + ',' + '<span>value: </span>' + value + ',' + '<span>status: </span>' + status +'</div>').prependTo($('.content'));
                             }
                         });  

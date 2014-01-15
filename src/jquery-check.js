@@ -139,7 +139,7 @@
                         this.$input.prop('checked', true);
                         this.$input.trigger('check::change', this);
                         if (typeof this.options.onChange === 'function') {
-                            this.options.onChange(this.checked);
+                            this.options.onChange.call(this,this.checked);
                         }
                     } 
                     if (value === false) {
@@ -148,7 +148,7 @@
                         this.$input.prop('checked', false);
                         if (this.type === 'checkbox' && typeof this.options.onChange === 'function') {
                             this.$input.trigger('check::change', this);
-                            this.options.onChange(this.checked);
+                            this.options.onChange.call(this,this.checked);
                         }
                     }
                     break;
