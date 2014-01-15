@@ -33,7 +33,7 @@
         this.initialed = false;
 
         if (this.type === 'radio') {
-            this.$group = this.options.group === undefined ? this : $('input[name="' + this.options.group + '"]');
+            this.$group = this.options.group === undefined ? this.$input : $('input[name="' + this.options.group + '"]');
         }
 
         var _id = this.$input.attr('id');

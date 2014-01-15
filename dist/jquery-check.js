@@ -1,6 +1,6 @@
-/*! jQuery Check - v0.1.0 - 2013-12-31
+/*! jQuery Check - v0.1.0 - 2014-01-15
 * https://github.com/amazingSurge/jquery-check
-* Copyright (c) 2013 amazingSurge; Licensed GPL */
+* Copyright (c) 2014 amazingSurge; Licensed GPL */
 (function($) {
 
     var Check = $.check = function(input, options) {
@@ -28,7 +28,7 @@
         this.initialed = false;
 
         if (this.type === 'radio') {
-            this.$group = this.options.group === undefined ? this : $('input[name="' + this.options.group + '"]');
+            this.$group = this.options.group === undefined ? this.$input : $('input[name="' + this.options.group + '"]');
         }
 
         var _id = this.$input.attr('id');
