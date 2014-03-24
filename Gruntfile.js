@@ -91,7 +91,7 @@ module.exports = function(grunt) {
                     compile: true
                 },
                 files: {
-                    'demo/css/check.css': ['less/jquery.check.less']
+                    'demo/css/asCheck.css': ['less/jquery.asCheck.less']
                 }
             }
         },
@@ -105,7 +105,7 @@ module.exports = function(grunt) {
                 }]
             },
             jquery: {
-                src: ['tabs.jquery.json'],
+                src: ['asCheck.jquery.json'],
                 overwrite: true, // overwrite matched source files
                 replacements: [{
                     from: /("version": ")([0-9\.]+)(")/g,
@@ -127,7 +127,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-text-replace');
 
     // Default task.
-    grunt.registerTask('dist', ['concat','uglify']);
+    grunt.registerTask('dist', ['concat', 'uglify']);
 
     grunt.registerTask('css', ['recess']);
 

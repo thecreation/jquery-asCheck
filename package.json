@@ -1,35 +1,33 @@
 {
-  "name": "jquery-check",
-  "title": "jQuery Check",
-  "description": "a easy used and customized checkbox",
-  "version": "0.1.0",
-  "homepage": "https://github.com/amazingSurge/jquery-check",
-  "author": {
-    "name": "amazingSurge",
-    "email": "amazingSurge@yahoo.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/amazingSurge/jquery-check.git"
-  },
-  "bugs": "https://github.com/amazingSurge/jquery-check/issues",
-  "licenses": [
-    {
-      "type": "GPL",
-      "url": "https://github.com/amazingSurge/jquery-check/blob/master/LICENSE-GPL"
+    "name": "jquery-asCheck",
+    "title": "jQuery asCheck",
+    "description": "a easy used and customized asCheckbox",
+    "version": "0.1.0",
+    "homepage": "https://github.com/amazingSurge/jquery-asCheck",
+    "author": {
+        "name": "amazingSurge",
+        "email": "amazingSurge@yahoo.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/amazingSurge/jquery-asCheck.git"
+    },
+    "bugs": "https://github.com/amazingSurge/jquery-asCheck/issues",
+    "licenses": [{
+        "type": "GPL",
+        "url": "https://github.com/amazingSurge/jquery-asCheck/blob/master/LICENSE-GPL"
+    }],
+    "devDependencies": {
+        "grunt-contrib-jshint": "~0.1.1",
+        "grunt-contrib-concat": "~0.1.2",
+        "grunt-contrib-uglify": "~0.1.1",
+        "grunt-contrib-watch": "~0.2.0",
+        "grunt-contrib-clean": "~0.4.0",
+        "grunt": "~0.4.1",
+        "grunt-jsbeautifier": "~0.1.6",
+        "grunt-recess": "~0.3.1"
+    },
+    "dependencies": {
+        "grunt-text-replace": "~0.3.6"
     }
-  ],
-  "devDependencies": {
-    "grunt-contrib-jshint": "~0.1.1",
-    "grunt-contrib-concat": "~0.1.2",
-    "grunt-contrib-uglify": "~0.1.1",
-    "grunt-contrib-watch": "~0.2.0",
-    "grunt-contrib-clean": "~0.4.0",
-    "grunt": "~0.4.1",
-    "grunt-jsbeautifier": "~0.1.6",
-    "grunt-recess": "~0.3.1"
-  },
-  "dependencies": {
-    "grunt-text-replace": "~0.3.6"
-  }
 }

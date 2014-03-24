@@ -1,5 +1,5 @@
-/*! jQuery Check - v0.1.0 - 2014-03-24
-* https://github.com/amazingSurge/jquery-check
+/*! jQuery asCheck - v0.1.0 - 2014-03-24
+* https://github.com/amazingSurge/jquery-asCheck
 * Copyright (c) 2014 amazingSurge; Licensed GPL */
 (function($) {
 

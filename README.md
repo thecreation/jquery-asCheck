@@ -1,7 +1,7 @@
-#jquery-check
+#jquery-asCheck
 
-The powerful jQuery plugin that provide a easy used and customized checkbox. <a href="http://amazingsurge.github.io/jquery-check/">Project page and demos</a><br />
-Download: <a href="https://github.com/amazingSurge/jquery-check/archive/master.zip">jquery-check-master.zip</a>
+The powerful jQuery plugin that provide a easy used and customized checkbox. <a href="http://amazingsurge.github.io/jquery-asCheck/">Project page and demos</a><br />
+Download: <a href="https://github.com/amazingSurge/jquery-asCheck/archive/master.zip">jquery-asCheck-master.zip</a>
 
 ***
 
@@ -19,10 +19,10 @@ Download: <a href="https://github.com/amazingSurge/jquery-check/archive/master.z
 
 Import this libraries:
 * jQuery
-* jquery-check.min.js
+* jquery-asCheck.min.js
 
 And CSS:
-* jquery-check.css - desirable if you have not yet connected one
+* jquery-asCheck.css - desirable if you have not yet connected one
 
 
 Create base html element:
@@ -133,6 +133,6 @@ Mobile browsers (like Opera mini, Chrome mobile, Safari mobile, Android browser 
 [amazingSurge](http://amazingSurge.com)
 
 ## License
-jQuery-check plugin is released under the <a href="https://github.com/amazingSurge/jquery-check/blob/master/LICENCE.GPL" target="_blank">GPL licence</a>.
+jQuery-asCheck plugin is released under the <a href="https://github.com/amazingSurge/jquery-asCheck/blob/master/LICENCE.GPL" target="_blank">GPL licence</a>.
 
 
