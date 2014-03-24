@@ -194,7 +194,7 @@
     };
 
     AsCheck.defaults = {
-        namespace: 'check',
+        namespace: 'asCheck',
         skin: null,
 
         disabled: false,

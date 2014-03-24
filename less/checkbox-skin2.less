@@ -14,7 +14,7 @@
 
 @checkboxSkin2Size: 14px;
 //==============================================
-.check_checkbox.check_skin-2 {
+.asCheck_checkbox.asCheck_skin-2 {
 	position: relative;
 	display: inline-block;
 	width: @checkboxSkin2Size;
@@ -33,20 +33,20 @@
 		border-color: @checkboxSkin2HoverBdColor;
 		.box-shadow-bothWay (0,1px,8px,0,fade(@checkboxSkin2HoverBoxShadowInsetColor,30%),0,1px,1px,0,fade(@checkboxSkin2BoxShadowInsetColor,10%));
 	}
-	&.check_checked {
+	&.asCheck_checked {
 		.box-shadow (1px,1px,0,0,@checkboxSkin2BoxShadowColor);
 		background-position: -11px -51px;
 		&:hover {
 			border-color: @checkboxSkin2BdColor;
 		}
 	}
-	&.check_disabled {
+	&.asCheck_disabled {
 		background-color: @checkboxSkin2DisabledBgColor;
 		border-color: @checkboxSkin2DisabledBdColor;
 		cursor: default;
 		.box-shadow (1px,1px,0,0,@checkboxSkin2BoxShadowColor);
 	}
-	&.check_disabled.check_checked {
+	&.asCheck_disabled.asCheck_checked {
 		background-color: @checkboxSkin2DisabledBgColor;
 		background-position: -51px -51px;
 		border-color: @checkboxSkin2DisabledBdColor;
