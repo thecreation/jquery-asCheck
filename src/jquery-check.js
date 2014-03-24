@@ -8,7 +8,7 @@
 
 (function($) {
 
-    var Check = $.check = function(input, options) {
+    var AsCheck = $.asCheck = function(input, options) {
 
         this.$input = $(input);
 
@@ -17,7 +17,7 @@
             group: this.$input.attr('name')
         };
 
-        this.options = $.extend({}, Check.defaults, options, meta_data);
+        this.options = $.extend({}, AsCheck.defaults, options, meta_data);
         this.namespace = this.options.namespace;
         this.type = this.$input.attr('type');
 
@@ -30,7 +30,7 @@
         };
 
         // enable flag
-        this.initialed = false;
+        this.initialized = false;
 
         if (this.type === 'radio') {
             this.$group = this.options.group === undefined ? this.$input : $('input[name="' + this.options.group + '"]');
@@ -45,11 +45,11 @@
         }
 
         this.init();
-        this.$input.trigger('check::ready', this);
+        this.$input.trigger('asCheck::ready', this);
     };
 
-    Check.prototype = {
-        constructor: Check,
+    AsCheck.prototype = {
+        constructor: AsCheck,
         init: function() {
             var self = this,
                 tpl = '<span class="' + this.namespace + '"></span>';
@@ -69,8 +69,8 @@
                 this.$check.addClass(this.namespace + '_' + this.options.skin);
             }
 
-            this.$input.trigger('check::init', this);
-            
+            this.$input.trigger('asCheck::init', this);
+
             this.$check.add(this.$label).on('click.check', function() {
                 if (self.disabled === true) {
                     return false;
@@ -80,7 +80,7 @@
                 return false;
             });
 
-            this.$check.add(this.$label).on('mouseenter.check',function() {
+            this.$check.add(this.$label).on('mouseenter.check', function() {
                 if (self.disabled === true) {
                     return false;
                 }
@@ -97,7 +97,7 @@
             this.set('checked', this.checked);
             this.set('disabled', this.disabled);
 
-            this.initialed = true;
+            this.initialized = true;
         },
         trigger: function(type) {
             if (type === 'radio') {
@@ -118,9 +118,9 @@
                     this.set('checked', true);
                 }
             }
-        },       
+        },
         set: function(state, value) {
-            if (this.initialed === true) {
+            if (this.initialized === true) {
                 if (state === 'checked') {
                     if (this.checked === value) {
                         return;
@@ -137,18 +137,18 @@
                         this.checked = value;
                         this.$check.addClass(this.classname.checked);
                         this.$input.prop('checked', true);
-                        this.$input.trigger('check::change', this);
+                        this.$input.trigger('asCheck::change', this);
                         if (typeof this.options.onChange === 'function') {
-                            this.options.onChange.call(this,this.checked);
+                            this.options.onChange.call(this, this.checked);
                         }
-                    } 
+                    }
                     if (value === false) {
                         this.checked = value;
                         this.$check.removeClass(this.classname.checked);
                         this.$input.prop('checked', false);
                         if (this.type === 'checkbox' && typeof this.options.onChange === 'function') {
-                            this.$input.trigger('check::change', this);
-                            this.options.onChange.call(this,this.checked);
+                            this.$input.trigger('asCheck::change', this);
+                            this.options.onChange.call(this, this.checked);
                         }
                     }
                     break;
@@ -158,7 +158,7 @@
                         this.enabled = false;
                         this.$check.addClass(this.classname.disabled);
                         this.$input.prop('disabled', true);
-                    } 
+                    }
                     if (value === false) {
                         this.disabled = value;
                         this.enabled = true;
@@ -189,20 +189,20 @@
             return this;
         },
         destory: function() {
-           this.$check.remove(); 
+            this.$check.remove();
         }
     };
 
-    Check.defaults = {
+    AsCheck.defaults = {
         namespace: 'check',
         skin: null,
 
-        disabled: false, 
-        checked: true, 
+        disabled: false,
+        checked: true,
         onChange: function() {}
     };
 
-    $.fn.check = function(options) {
+    $.fn.asCheck = function(options) {
         if (typeof options === 'string') {
             var method = options;
             var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
@@ -218,7 +218,7 @@
             opts.$group = this;
             return this.each(function() {
                 if (!$.data(this, 'check')) {
-                    $.data(this, 'check', new Check(this, opts));
+                    $.data(this, 'check', new AsCheck(this, opts));
                 }
             });
         }

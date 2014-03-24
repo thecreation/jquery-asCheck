@@ -81,7 +81,7 @@
         <section>
             <h4>Default</h4>
             <pre class="has-example"><code class="language-javascript">
-$(".custom").check({
+$(".custom").asCheck({
     skin: 'skin-1'
 });
             </code></pre>
@@ -105,14 +105,14 @@ $(".custom").check({
                 </ul>
                 <script>                   
                     $(document).ready(function() {
-                        $('.radio').check({
+                        $('.radio').asCheck({
                             skin: 'skin-1'
                         });                        
                     });
-                    $('.radio').on('check::init', function(event, instance) {});
-                    $('.radio').on('check::ready', function(event, instance) {});
-                    $('.radio').on('check::change', function(event, instance) {});
-                    $('.radio').on('check::init', function(event, instance) {});
+                    $('.radio').on('asCheck::init', function(event, instance) {});
+                    $('.radio').on('asCheck::ready', function(event, instance) {});
+                    $('.radio').on('asCheck::change', function(event, instance) {});
+                    $('.radio').on('asCheck::init', function(event, instance) {});
                 </script>
             </div>
             <div class="example">
@@ -134,7 +134,7 @@ $(".custom").check({
                 
                 <script>                   
                     $(document).ready(function() {
-                        $('.checkbox').check({
+                        $('.checkbox').asCheck({
                             skin: 'skin-1'
                         });  
                     
@@ -174,7 +174,7 @@ $(".custom").check({
                         var bar = $('.radio-1').find('input');
                        // console.log($(bar[3]));
 
-                        $('.radio-1').check({
+                        $('.radio-1').asCheck({
                             skin: 'skin-2',
                             onChange: function(value) {
                                 var type = this.type,
@@ -204,7 +204,7 @@ $(".custom").check({
                 
                 <script>                   
                     $(document).ready(function() {
-                        $('.checkbox-1').check({
+                        $('.checkbox-1').asCheck({
                             skin: 'skin-2'
                         });  
                     
@@ -235,7 +235,7 @@ $(".custom").check({
                 </ul>
                 <script>                   
                     $(document).ready(function() {
-                        $('.radio-2').check({
+                        $('.radio-2').asCheck({
                             skin: 'skin-3'
                         });                        
                     });
@@ -259,7 +259,7 @@ $(".custom").check({
                 
                 <script>                   
                     $(document).ready(function() {
-                        $('.checkbox-2').check({
+                        $('.checkbox-2').asCheck({
                             skin: 'skin-3'
                         });  
                     
@@ -290,7 +290,7 @@ $(".custom").check({
                 </ul>
                 <script>                   
                     $(document).ready(function() {
-                        $('.radio-4').check({
+                        $('.radio-4').asCheck({
                             skin: 'skin-4'
                         });                        
                     });
@@ -314,7 +314,7 @@ $(".custom").check({
                 
                 <script>                   
                     $(document).ready(function() {
-                        $('.checkbox-4').check({
+                        $('.checkbox-4').asCheck({
                             skin: 'skin-4'
                         });  
                     
@@ -346,7 +346,7 @@ $(".custom").check({
                 </ul>
                 <script>                   
                     $(document).ready(function() {
-                        $('.radio-5').check({
+                        $('.radio-5').asCheck({
                             skin: 'skin-5',
                             onChange: function(value) {
                                 var type = this.options.type,
@@ -376,7 +376,7 @@ $(".custom").check({
                 
                 <script>                   
                     $(document).ready(function() {
-                        $('.checkbox-5').check({
+                        $('.checkbox-5').asCheck({
                             skin: 'skin-5',
                             onChange: function(value) {
                                 var type = this.options.type,
