@@ -1,21 +1,23 @@
 /*
- * jquery-check
- * https://github.com/amazingSurge/jquery-check
+ * jquery-asCheck
+ * https://github.com/amazingSurge/jquery-asCheck
  *
- * Copyright (c) 2013 joeylin
+ * Copyright (c) 2013 amazingSurge
  * Licensed under the MIT license.
  */
 
 (function($) {
-
     var AsCheck = $.asCheck = function(input, options) {
-
         this.$input = $(input);
-
         // options
         var meta_data = {
             group: this.$input.attr('name')
         };
+        if (meta_data.group) {
+            this.name = meta_data.group;
+        } else {
+            this.name = options.name;
+        }
 
         this.options = $.extend({}, AsCheck.defaults, options, meta_data);
         this.namespace = this.options.namespace;
@@ -199,6 +201,7 @@
 
         disabled: false,
         checked: true,
+        name: null,
         onChange: function() {}
     };
 
@@ -223,5 +226,4 @@
             });
         }
     };
-
 }(jQuery));

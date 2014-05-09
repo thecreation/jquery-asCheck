@@ -1,16 +1,18 @@
-/*! jQuery asCheck - v0.1.0 - 2014-03-24
+/*! jQuery asCheck - v0.1.0 - 2014-05-09
 * https://github.com/amazingSurge/jquery-asCheck
 * Copyright (c) 2014 amazingSurge; Licensed GPL */
 (function($) {
-
     var AsCheck = $.asCheck = function(input, options) {
-
         this.$input = $(input);
-
         // options
         var meta_data = {
             group: this.$input.attr('name')
         };
+        if (meta_data.group) {
+            this.name = meta_data.group;
+        } else {
+            this.name = options.name;
+        }
 
         this.options = $.extend({}, AsCheck.defaults, options, meta_data);
         this.namespace = this.options.namespace;
@@ -189,11 +191,12 @@
     };
 
     AsCheck.defaults = {
-        namespace: 'check',
+        namespace: 'asCheck',
         skin: null,
 
         disabled: false,
         checked: true,
+        name: null,
         onChange: function() {}
     };
 
@@ -218,5 +221,4 @@
             });
         }
     };
-
 }(jQuery));
