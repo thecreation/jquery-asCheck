@@ -1,4 +1,4 @@
-/*! jQuery asCheck - v0.1.0 - 2014-05-09
+/*! jQuery asCheck - v0.1.0 - 2014-05-13
 * https://github.com/amazingSurge/jquery-asCheck
 * Copyright (c) 2014 amazingSurge; Licensed GPL */
 (function($) {
@@ -41,8 +41,8 @@
             this.$label = null;
         }
 
+        this._trigger('init');
         this.init();
-        this.$input.trigger('asCheck::ready', this);
     };
 
     AsCheck.prototype = {
@@ -72,7 +72,6 @@
                 if (self.disabled === true) {
                     return false;
                 }
-
                 self.trigger.call(self, self.type);
                 return false;
             });
@@ -95,6 +94,22 @@
             this.set('disabled', this.disabled);
 
             this.initialized = true;
+            this._trigger('ready');
+        },
+        _trigger: function(eventType) {
+            // event
+            this.$input.trigger('asColorInput::' + eventType, this);
+            this.$input.trigger(eventType + '.asColorInput', this);
+
+            // callback
+            eventType = eventType.replace(/\b\w+\b/g, function(word) {
+                return word.substring(0, 1).toUpperCase() + word.substring(1);
+            });
+            var onFunction = 'on' + eventType;
+            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
+            if (typeof this.options[onFunction] === 'function') {
+                this.options[onFunction].apply(this, method_arguments);
+            }
         },
         trigger: function(type) {
             if (type === 'radio') {
@@ -104,7 +119,7 @@
 
                 this.$group.each(function(i, v) {
                     if ($(v).prop('checked') === true) {
-                        $(v).data('check').set('checked', false);
+                        $(v).data('asCheck').set('checked', false);
                     }
                 });
                 this.set('checked', true);
@@ -130,33 +145,29 @@
             }
             switch (state) {
                 case 'checked':
-                    if (value === true) {
+                    if (value) {
                         this.checked = value;
                         this.$check.addClass(this.classname.checked);
                         this.$input.prop('checked', true);
-                        this.$input.trigger('asCheck::change', this);
-                        if (typeof this.options.onChange === 'function') {
-                            this.options.onChange.call(this, this.checked);
-                        }
+                        this._trigger('change', this.checked);
                     }
-                    if (value === false) {
+                    if (!value) {
                         this.checked = value;
                         this.$check.removeClass(this.classname.checked);
                         this.$input.prop('checked', false);
-                        if (this.type === 'checkbox' && typeof this.options.onChange === 'function') {
-                            this.$input.trigger('asCheck::change', this);
-                            this.options.onChange.call(this, this.checked);
+                        if (this.type === 'checkbox') {
+                            this._trigger('change', this.checked);
                         }
                     }
                     break;
                 case 'disabled':
-                    if (value === true) {
+                    if (value) {
                         this.disabled = value;
                         this.enabled = false;
                         this.$check.addClass(this.classname.disabled);
                         this.$input.prop('disabled', true);
                     }
-                    if (value === false) {
+                    if (!value) {
                         this.disabled = value;
                         this.enabled = true;
                         this.$check.removeClass(this.classname.disabled);
@@ -206,7 +217,7 @@
             var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
 
             return this.each(function() {
-                var api = $.data(this, 'check');
+                var api = $.data(this, 'asCheck');
                 if (typeof api[method] === 'function') {
                     api[method].apply(api, method_arguments);
                 }
@@ -215,8 +226,8 @@
             var opts = options || {};
             opts.$group = this;
             return this.each(function() {
-                if (!$.data(this, 'check')) {
-                    $.data(this, 'check', new AsCheck(this, opts));
+                if (!$.data(this, 'asCheck')) {
+                    $.data(this, 'asCheck', new AsCheck(this, opts));
                 }
             });
         }
