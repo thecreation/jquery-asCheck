@@ -103,8 +103,8 @@
         },
         _trigger: function(eventType) {
             // event
-            this.$input.trigger('asColorInput::' + eventType, this);
-            this.$input.trigger(eventType + '.asColorInput', this);
+            this.$input.trigger('asCheck::' + eventType, this);
+            this.$input.trigger(eventType + '.asCheck', this);
 
             // callback
             eventType = eventType.replace(/\b\w+\b/g, function(word) {
@@ -180,6 +180,10 @@
                     }
                     break;
             }
+        },
+
+        get: function() {
+            return this.$input.prop('checked');
         },
 
         /*

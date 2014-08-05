@@ -1,4 +1,4 @@
-/*! jQuery asCheck - v0.1.0 - 2014-05-13
+/*! jQuery asCheck - v0.1.0 - 2014-08-05
 * https://github.com/amazingSurge/jquery-asCheck
 * Copyright (c) 2014 amazingSurge; Licensed GPL */
 (function($) {
@@ -98,8 +98,8 @@
         },
         _trigger: function(eventType) {
             // event
-            this.$input.trigger('asColorInput::' + eventType, this);
-            this.$input.trigger(eventType + '.asColorInput', this);
+            this.$input.trigger('asCheck::' + eventType, this);
+            this.$input.trigger(eventType + '.asCheck', this);
 
             // callback
             eventType = eventType.replace(/\b\w+\b/g, function(word) {
@@ -175,6 +175,10 @@
                     }
                     break;
             }
+        },
+
+        get: function() {
+            return this.$input.prop('checked');
         },
 
         /*
