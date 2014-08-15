@@ -1,4 +1,4 @@
-/*! jQuery asCheck - v0.1.0 - 2014-08-05
+/*! jQuery asCheck - v0.1.0 - 2014-08-15
 * https://github.com/amazingSurge/jquery-asCheck
 * Copyright (c) 2014 amazingSurge; Licensed GPL */
 (function($) {
@@ -96,10 +96,10 @@
             this.initialized = true;
             this._trigger('ready');
         },
-        _trigger: function(eventType) {
+        _trigger: function(eventType, data) {
             // event
-            this.$input.trigger('asCheck::' + eventType, this);
-            this.$input.trigger(eventType + '.asCheck', this);
+            this.$input.trigger('asCheck::' + eventType, data, this);
+            this.$input.trigger(eventType + '.asCheck', data, this);
 
             // callback
             eventType = eventType.replace(/\b\w+\b/g, function(word) {
@@ -149,14 +149,14 @@
                         this.checked = value;
                         this.$check.addClass(this.classname.checked);
                         this.$input.prop('checked', true);
-                        this._trigger('change', this.checked);
+                        this._trigger('change', [this.checked, this.options.name, 'asCheck']);
                     }
                     if (!value) {
                         this.checked = value;
                         this.$check.removeClass(this.classname.checked);
                         this.$input.prop('checked', false);
                         if (this.type === 'checkbox') {
-                            this._trigger('change', this.checked);
+                            this._trigger('change', [this.checked, this.options.name, 'asCheck']);
                         }
                     }
                     break;
