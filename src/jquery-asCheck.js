@@ -101,17 +101,17 @@
             this.initialized = true;
             this._trigger('ready');
         },
-        _trigger: function(eventType, data) {
+        _trigger: function(eventType) {
+            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
             // event
-            this.$input.trigger('asCheck::' + eventType, data, this);
-            this.$input.trigger(eventType + '.asCheck', data, this);
+            this.$input.trigger('asCheck::' + eventType, method_arguments, this);
+            this.$input.trigger(eventType + '.asCheck', method_arguments, this);
 
             // callback
             eventType = eventType.replace(/\b\w+\b/g, function(word) {
                 return word.substring(0, 1).toUpperCase() + word.substring(1);
             });
             var onFunction = 'on' + eventType;
-            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
             if (typeof this.options[onFunction] === 'function') {
                 this.options[onFunction].apply(this, method_arguments);
             }
@@ -154,14 +154,14 @@
                         this.checked = value;
                         this.$check.addClass(this.classname.checked);
                         this.$input.prop('checked', true);
-                        this._trigger('change', [this.checked, this.options.name, 'asCheck']);
+                        this._trigger('change', this.checked, this.options.name, 'asCheck');
                     }
                     if (!value) {
                         this.checked = value;
                         this.$check.removeClass(this.classname.checked);
                         this.$input.prop('checked', false);
                         if (this.type === 'checkbox') {
-                            this._trigger('change', [this.checked, this.options.name, 'asCheck']);
+                            this._trigger('change', this.checked, this.options.name, 'asCheck');
                         }
                     }
                     break;
