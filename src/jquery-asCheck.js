@@ -102,8 +102,14 @@
             this._trigger('ready');
         },
         _trigger: function(eventType) {
-            var data = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
-            data ? data.push(this) : data = this;
+            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined,
+                data;
+            if (method_arguments) {
+                data = method_arguments;
+                data.push(this);
+            }else {
+                data = this;
+            }
             // event
             this.$input.trigger('asCheck::' + eventType, data);
             this.$input.trigger(eventType + '.asCheck', data);
@@ -113,7 +119,6 @@
                 return word.substring(0, 1).toUpperCase() + word.substring(1);
             });
             var onFunction = 'on' + eventType;
-            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
             if (typeof this.options[onFunction] === 'function') {
                 this.options[onFunction].apply(this, method_arguments);
             }
