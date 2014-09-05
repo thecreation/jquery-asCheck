@@ -3,402 +3,365 @@
   display: inline-block;
   width: 22px;
   height: 22px;
-  padding: 0;
   margin: 0;
+  padding: 0;
   vertical-align: middle;
-  cursor: pointer;
   background-color: #dddddd;
   background-image: url("../img/check-radio.png");
   background-position: 22px 0;
+  cursor: pointer;
 }
-
 .asCheck_checkbox.asCheck_skin-1:hover {
   background-color: #ffffff;
   background-position: -10px -10px;
 }
-
 .asCheck_checkbox.asCheck_skin-1.asCheck_checked {
   background-color: #ffffff;
   background-position: -48px -10px;
 }
-
 .asCheck_checkbox.asCheck_skin-1.asCheck_disabled {
-  cursor: default;
   background-color: #eeeeee;
   background-position: 22px 0;
-}
-
-.asCheck_checkbox.asCheck_skin-1.asCheck_disabled.asCheck_checked {
   cursor: default;
+}
+.asCheck_checkbox.asCheck_skin-1.asCheck_disabled.asCheck_checked {
   background-color: #ffffff;
   background-position: -86px -10px;
+  cursor: default;
 }
-
 .asCheck_radio.asCheck_skin-1 {
   display: inline-block;
   width: 22px;
   height: 22px;
-  padding: 0;
   margin: 0;
+  padding: 0;
   vertical-align: middle;
-  cursor: pointer;
   background-color: #dddddd;
   background-image: url("../img/check-radio.png");
   background-position: 22px 0;
+  cursor: pointer;
   -webkit-border-radius: 23px;
-     -moz-border-radius: 23px;
-          border-radius: 23px;
+  -moz-border-radius: 23px;
   -ms-transform: 23px;
-   -o-transform: 23px;
+  -o-transform: 23px;
+  border-radius: 23px;
 }
-
 .asCheck_radio.asCheck_skin-1:hover {
   background-color: #ffffff;
   background-position: -128px -11px;
 }
-
 .asCheck_radio.asCheck_skin-1.asCheck_checked {
   background-color: #ffffff;
   background-position: -162px -11px;
 }
-
 .asCheck_radio.asCheck_skin-1.asCheck_disabled {
-  cursor: default;
   background-color: #eeeeee;
   background-position: 22px 0;
-}
-
-.asCheck_radio.asCheck_skin-1.asCheck_disabled.asCheck_checked {
   cursor: default;
+}
+.asCheck_radio.asCheck_skin-1.asCheck_disabled.asCheck_checked {
   background-color: #ffffff;
   background-position: -196px -11px;
+  cursor: default;
 }
-
 .asCheck_checkbox.asCheck_skin-2 {
   position: relative;
   display: inline-block;
   width: 14px;
   height: 14px;
-  padding: 0;
   margin: 0;
+  padding: 0;
   vertical-align: middle;
-  cursor: pointer;
   background-color: #ffffff;
   background-image: url("../img/check-radio.png");
   background-position: 14px 0;
   border: 1px solid #d9d9d9;
+  cursor: pointer;
   -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
+  -moz-border-radius: 3px;
   -ms-transform: 3px;
-  -ms-transform: 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-   -o-transform: 3px;
-   -o-transform: 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -o-transform: 3px;
+  border-radius: 3px;
   -webkit-box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-     -moz-box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -ms-transform: 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -o-transform: 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
-
 .asCheck_checkbox.asCheck_skin-2:hover {
   border-color: #7ebfee;
-  -ms-transform: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-   -o-transform: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-     -moz-box-shadow: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -ms-transform: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -o-transform: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
-
 .asCheck_checkbox.asCheck_skin-2.asCheck_checked {
-  background-position: -11px -51px;
-  -ms-transform: 1px 1px 0 0 #ffffff;
-   -o-transform: 1px 1px 0 0 #ffffff;
   -webkit-box-shadow: 1px 1px 0 0 #ffffff;
-     -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -ms-transform: 1px 1px 0 0 #ffffff;
+  -o-transform: 1px 1px 0 0 #ffffff;
+  -webkit-box-shadow: 1px 1px 0 0 #ffffff;
           box-shadow: 1px 1px 0 0 #ffffff;
+  background-position: -11px -51px;
 }
-
 .asCheck_checkbox.asCheck_skin-2.asCheck_checked:hover {
   border-color: #d9d9d9;
 }
-
 .asCheck_checkbox.asCheck_skin-2.asCheck_disabled {
-  cursor: default;
   background-color: #f6f6f6;
   border-color: #ebebeb;
-  -ms-transform: 1px 1px 0 0 #ffffff;
-   -o-transform: 1px 1px 0 0 #ffffff;
+  cursor: default;
   -webkit-box-shadow: 1px 1px 0 0 #ffffff;
-     -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -ms-transform: 1px 1px 0 0 #ffffff;
+  -o-transform: 1px 1px 0 0 #ffffff;
+  -webkit-box-shadow: 1px 1px 0 0 #ffffff;
           box-shadow: 1px 1px 0 0 #ffffff;
 }
-
 .asCheck_checkbox.asCheck_skin-2.asCheck_disabled.asCheck_checked {
-  cursor: default;
   background-color: #f6f6f6;
   background-position: -51px -51px;
   border-color: #ebebeb;
-  -ms-transform: 1px 1px 0 0 #ffffff;
-   -o-transform: 1px 1px 0 0 #ffffff;
+  cursor: default;
   -webkit-box-shadow: 1px 1px 0 0 #ffffff;
-     -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -ms-transform: 1px 1px 0 0 #ffffff;
+  -o-transform: 1px 1px 0 0 #ffffff;
+  -webkit-box-shadow: 1px 1px 0 0 #ffffff;
           box-shadow: 1px 1px 0 0 #ffffff;
 }
-
 .asCheck_radio.asCheck_skin-2 {
   position: relative;
   display: inline-block;
   width: 14px;
   height: 14px;
-  padding: 0;
   margin: 0;
+  padding: 0;
   vertical-align: middle;
-  cursor: pointer;
   background-color: #ffffff;
   background-image: url("../img/check-radio.png");
   background-position: 14px 0;
   border: 1px solid #d9d9d9;
+  cursor: pointer;
   -webkit-border-radius: 15px;
-     -moz-border-radius: 15px;
-          border-radius: 15px;
+  -moz-border-radius: 15px;
   -ms-transform: 15px;
-  -ms-transform: 0 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-   -o-transform: 15px;
-   -o-transform: 0 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -o-transform: 15px;
+  border-radius: 15px;
   -webkit-box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-     -moz-box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -ms-transform: 0 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -o-transform: 0 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.1), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
-
 .asCheck_radio.asCheck_skin-2:hover {
   border-color: #7ebfee;
-  -ms-transform: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-   -o-transform: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-     -moz-box-shadow: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -ms-transform: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -o-transform: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 1px 8px 0 rgba(111, 184, 236, 0.3), inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
-
 .asCheck_radio.asCheck_skin-2.asCheck_checked {
   background-position: -90px -48px;
-  -ms-transform: 1px 1px 0 0 #ffffff;
-   -o-transform: 1px 1px 0 0 #ffffff;
   -webkit-box-shadow: 1px 1px 0 0 #ffffff;
-     -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -ms-transform: 1px 1px 0 0 #ffffff;
+  -o-transform: 1px 1px 0 0 #ffffff;
+  -webkit-box-shadow: 1px 1px 0 0 #ffffff;
           box-shadow: 1px 1px 0 0 #ffffff;
 }
-
 .asCheck_radio.asCheck_skin-2.asCheck_checked:hover {
   border-color: #d9d9d9;
 }
-
 .asCheck_radio.asCheck_skin-2.asCheck_disabled {
-  cursor: default;
   background-color: #f6f6f6;
   border-color: #ebebeb;
-  -ms-transform: 1px 1px 0 0 #ffffff;
-   -o-transform: 1px 1px 0 0 #ffffff;
+  cursor: default;
   -webkit-box-shadow: 1px 1px 0 0 #ffffff;
-     -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -ms-transform: 1px 1px 0 0 #ffffff;
+  -o-transform: 1px 1px 0 0 #ffffff;
+  -webkit-box-shadow: 1px 1px 0 0 #ffffff;
           box-shadow: 1px 1px 0 0 #ffffff;
 }
-
 .asCheck_radio.asCheck_skin-2.asCheck_disabled.asCheck_checked {
-  cursor: default;
   background-color: #f6f6f6;
   background-position: -120px -48px;
   border-color: #ebebeb;
-  -ms-transform: 1px 1px 0 0 #ffffff;
-   -o-transform: 1px 1px 0 0 #ffffff;
+  cursor: default;
   -webkit-box-shadow: 1px 1px 0 0 #ffffff;
-     -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -moz-box-shadow: 1px 1px 0 0 #ffffff;
+  -ms-transform: 1px 1px 0 0 #ffffff;
+  -o-transform: 1px 1px 0 0 #ffffff;
+  -webkit-box-shadow: 1px 1px 0 0 #ffffff;
           box-shadow: 1px 1px 0 0 #ffffff;
 }
-
 .asCheck_checkbox.asCheck_skin-3 {
   position: relative;
   display: inline-block;
   width: 18px;
   height: 18px;
-  padding: 0;
   margin: 0;
+  padding: 0;
   vertical-align: middle;
-  cursor: pointer;
   background-color: #ffffff;
   background-image: url("../img/check-radio.png");
   background-position: 18px 0;
   border: 2px solid #d0d0d0;
+  cursor: pointer;
   -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
+  -moz-border-radius: 3px;
   -ms-transform: 3px;
-   -o-transform: 3px;
+  -o-transform: 3px;
+  border-radius: 3px;
 }
-
 .asCheck_checkbox.asCheck_skin-3:hover {
   border-color: #7ebdcc;
 }
-
 .asCheck_checkbox.asCheck_skin-3.asCheck_checked {
   background-position: -9px -78px;
   border-color: #7ebdcc;
 }
-
 .asCheck_checkbox.asCheck_skin-3.asCheck_disabled {
-  cursor: default;
   border-color: #ebebeb;
-}
-
-.asCheck_checkbox.asCheck_skin-3.asCheck_disabled.asCheck_checked {
   cursor: default;
+}
+.asCheck_checkbox.asCheck_skin-3.asCheck_disabled.asCheck_checked {
   background-position: -49px -78px;
   border-color: #ebebeb;
+  cursor: default;
 }
-
 .asCheck_radio.asCheck_skin-3 {
   position: relative;
   display: inline-block;
   width: 18px;
   height: 18px;
-  padding: 0;
   margin: 0;
+  padding: 0;
   vertical-align: middle;
-  cursor: pointer;
   background-color: #ffffff;
   background-image: url("../img/check-radio.png");
   background-position: 18px 0;
   border: 2px solid #d0d0d0;
+  cursor: pointer;
   -webkit-border-radius: 19px;
-     -moz-border-radius: 19px;
-          border-radius: 19px;
+  -moz-border-radius: 19px;
   -ms-transform: 19px;
-   -o-transform: 19px;
+  -o-transform: 19px;
+  border-radius: 19px;
 }
-
 .asCheck_radio.asCheck_skin-3:hover {
   border-color: #7ebdcc;
 }
-
 .asCheck_radio.asCheck_skin-3.asCheck_checked {
   background-position: -90px -77px;
   border-color: #7ebdcc;
 }
-
 .asCheck_radio.asCheck_skin-3.asCheck_disabled {
-  cursor: default;
   border-color: #ebebeb;
-}
-
-.asCheck_radio.asCheck_skin-3.asCheck_disabled.asCheck_checked {
   cursor: default;
+}
+.asCheck_radio.asCheck_skin-3.asCheck_disabled.asCheck_checked {
   background-position: -118px -76px;
   border-color: #ebebeb;
+  cursor: default;
 }
-
 .asCheck_checkbox.asCheck_skin-4 {
   position: relative;
   display: inline-block;
   width: 26px;
   height: 26px;
-  padding: 0;
   margin: 0;
+  padding: 0;
   vertical-align: middle;
-  cursor: pointer;
   background-image: url("../img/check-radio.png");
   background-position: -8px -207px;
+  cursor: pointer;
 }
-
 .asCheck_checkbox.asCheck_skin-4.asCheck_checked {
   background-position: -43px -207px;
 }
-
 .asCheck_checkbox.asCheck_skin-4.asCheck_disabled {
-  cursor: default;
   background-position: -86px -207px;
-}
-
-.asCheck_checkbox.asCheck_skin-4.asCheck_disabled.asCheck_checked {
   cursor: default;
-  background-position: -129px -206px;
 }
-
+.asCheck_checkbox.asCheck_skin-4.asCheck_disabled.asCheck_checked {
+  background-position: -129px -206px;
+  cursor: default;
+}
 .asCheck_radio.asCheck_skin-4 {
   position: relative;
   display: inline-block;
   width: 26px;
   height: 26px;
-  padding: 0;
   margin: 0;
+  padding: 0;
   vertical-align: middle;
-  cursor: pointer;
   background-image: url("../img/check-radio.png");
   background-position: -7px -174px;
+  cursor: pointer;
 }
-
 .asCheck_radio.asCheck_skin-4.asCheck_checked {
   background-position: -45px -174px;
 }
-
 .asCheck_radio.asCheck_skin-4.asCheck_disabled {
-  cursor: default;
   background-position: -86px -174px;
-}
-
-.asCheck_radio.asCheck_skin-4.asCheck_disabled.asCheck_checked {
   cursor: default;
-  background-position: -123px -175px;
 }
-
+.asCheck_radio.asCheck_skin-4.asCheck_disabled.asCheck_checked {
+  background-position: -123px -175px;
+  cursor: default;
+}
 .asCheck_checkbox.check_skin-5 {
   position: relative;
   display: inline-block;
   width: 24px;
   height: 24px;
-  padding: 0;
   margin: 0;
+  padding: 0;
   vertical-align: middle;
-  cursor: pointer;
   background-color: #fff;
   background-image: url("../img/check-radio.png");
   background-position: -9px -246px;
+  cursor: pointer;
 }
-
 .asCheck_checkbox.check_skin-5.asCheck_checked {
   background-position: -46px -246px;
 }
-
 .asCheck_checkbox.check_skin-5.asCheck_disabled {
-  cursor: default;
   background-position: -86px -245px;
-}
-
-.asCheck_checkbox.check_skin-5.asCheck_disabled.asCheck_checked {
   cursor: default;
-  background-position: -127px -247px;
 }
-
+.asCheck_checkbox.check_skin-5.asCheck_disabled.asCheck_checked {
+  background-position: -127px -247px;
+  cursor: default;
+}
 .asCheck_radio.asCheck_skin-5 {
   position: relative;
   display: inline-block;
   width: 24px;
   height: 24px;
-  padding: 0;
   margin: 0;
+  padding: 0;
   vertical-align: middle;
-  cursor: pointer;
   background-image: url("../img/check-radio.png");
   background-position: -8px -278px;
+  cursor: pointer;
 }
-
 .asCheck_radio.asCheck_skin-5.asCheck_checked {
   background-position: -46px -279px;
 }
-
 .asCheck_radio.asCheck_skin-5.asCheck_disabled {
-  cursor: default;
   background-position: -87px -281px;
-}
-
-.asCheck_radio.asCheck_skin-5.asCheck_disabled.asCheck_checked {
   cursor: default;
+}
+.asCheck_radio.asCheck_skin-5.asCheck_disabled.asCheck_checked {
   background-position: -125px -278px;
+  cursor: default;
 }

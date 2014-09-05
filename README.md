@@ -123,12 +123,6 @@ jquery-tabs is verified to work in Internet Explorer 7+, Firefox 2+, Opera 9+, G
 
 Mobile browsers (like Opera mini, Chrome mobile, Safari mobile, Android browser and others) is coming soon.
 
-## Changes
-
-| Version | Notes                                                            |
-|---------|------------------------------------------------------------------|
-|  v0.1.1 |  fix label hover issue                                           |
-
 ## Author
 [amazingSurge](http://amazingSurge.com)
 
