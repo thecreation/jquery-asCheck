@@ -102,14 +102,9 @@
             this._trigger('ready');
         },
         _trigger: function(eventType) {
-            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined,
-                data;
-            if (method_arguments) {
-                data = method_arguments;
-                data.push(this);
-            } else {
-                data = this;
-            }
+            var method_arguments = Array.prototype.slice.call(arguments, 1),
+                data = method_arguments.concat([this]);
+
             // event
             this.$input.trigger('asCheck::' + eventType, data);
             this.$input.trigger(eventType + '.asCheck', data);
@@ -188,14 +183,9 @@
                     break;
             }
         },
-
         get: function() {
             return this.$input.prop('checked');
         },
-
-        /*
-            Public Method
-         */
         check: function() {
             this.set('checked', true);
             return this;
@@ -230,11 +220,11 @@
     $.fn.asCheck = function(options) {
         if (typeof options === 'string') {
             var method = options;
-            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : [];
+            var method_arguments = Array.prototype.slice.call(arguments, 1);
 
             if (/^\_/.test(method)) {
                 return false;
-            } else if (method === 'get' || (method === 'val' && method_arguments === [])) {
+            } else if (method === 'get' || (method === 'val' && method_arguments.length === 0)) {
                 var api = this.first().data('asCheck');
                 if (api && typeof api[method] === 'function') {
                     return api[method].apply(api, method_arguments);
