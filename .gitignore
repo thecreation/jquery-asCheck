@@ -1,16 +1,29 @@
-/node_modules/
-
-# Numerous always-ignore extensions
-*.diff
-*.err
-*.orig
+lib-cov
+*.csv
+*.dat
+*.gz
 *.log
-*.rej
-*.swo
+*.out
+*.pid
+*.rar
+*.seed
+*.sublime-*
+*.zip
+*.un~
 *.swp
-*.vi
-*~
-*.sass-cache
+*.settings
+
+pids
+logs
+results
+npm-debug.log
+TODO.md
+
+bower_components
+node_modules
+_gh_pages
+temp
+tmp
 
 # OS or Editor folders
 .DS_Store
@@ -18,7 +31,6 @@
 Thumbs.db
 .cache
 .project
-.settings
 .tmproj
 *.esproj
 nbproject
