@@ -1,6 +1,6 @@
 #jquery-asCheck
 
-The powerful jQuery plugin that provide a easy used and customized checkbox. <a href="http://amazingsurge.github.io/jquery-asCheck/">Project page and demos</a><br />
+The powerful jQuery plugin that provide a easy used and customized checkbox. <a href="http://amazingSurge.github.io/jquery-asCheck/">Project page and demos</a><br />
 Download: <a href="https://github.com/amazingSurge/jquery-asCheck/archive/master.zip">jquery-asCheck-master.zip</a>
 
 ***

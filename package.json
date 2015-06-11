@@ -6,11 +6,12 @@
     "homepage": "https://github.com/amazingSurge/jquery-asCheck",
     "author": {
         "name": "amazingSurge",
-        "email": "amazingSurge@yahoo.com"
+        "email": "amazingSurge@yahoo.com",
+        "url": "amazingSurge.com"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/amazingSurge/jquery-asCheck.git"
+        "url": "git@github.com:amazingSurge/jquery-asCheck.git"
     },
     "bugs": "https://github.com/amazingSurge/jquery-asCheck/issues",
     "licenses": [{
