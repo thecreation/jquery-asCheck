@@ -18,3 +18,4 @@
 
 demo/* linguist-documentation
 libs/* linguist-vendored
+less/* linguist-vendored
