@@ -1,0 +1,132 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>asCheck</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="../dist/css/asCheck.css">
+
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.toc.js"></script>
+  <script src="js/prism.js"></script>
+  <script src="../dist/jquery-asCheck.js"></script>
+  <style type="text/css">
+    h2 {
+      margin-bottom: 40px;
+    }
+
+    ul {
+      margin: 0;
+      list-style: none;
+    }
+
+    #infobar {
+      width: 500px;
+      height: 200px;
+      border: 1px solid #333;
+      overflow-y: scroll;
+    }
+
+    .content {
+      width: 100%;
+    }
+
+    .content div {
+      color: blue;
+      opacity: 0.5;
+    }
+
+    .content div span {
+      color: #666;
+    }
+
+    .info {
+      margin-top: 10px;
+    }
+
+    .example {
+      background-color: #F8F8F8;
+    }
+
+    label {
+      display: inline-block;
+      margin-left: 5px;
+    }
+
+    span.check-box {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <div id="toc"></div>
+  <div id="wrapper">
+    <section>
+      <h2>demo</h2>
+      <section>
+        <h4>Default</h4>
+        <pre class="has-example"><code class="language-javascript">
+$(".custom").asCheck();
+            </code></pre>
+        <div class="example">
+          <ul>
+            <li>
+              <input class="radio" type="radio" name="radio" id="male-1" value="male" /><label for="male-1">Male</label>
+            </li>
+            <li>
+              <input class="radio" type="radio" name="radio" id="male-2" value="female" /><label for="male-2">Female</label>
+            </li>
+            <li>
+              <input class="radio" type="radio" name="radio" id="male-3" value="male" disabled="disabled" /><label for="male-3">checked disable</label>
+            </li>
+            <li>
+              <input class="radio" type="radio" name="radio" id="male-4" value="male" disabled="disabled" /><label for="male-4">checked disable</label>
+            </li>
+          </ul>
+          <script>
+            jQuery(function($) {
+              $('.radio').asCheck();
+            });
+          </script>
+        </div>
+        <div class="example">
+          <ul>
+            <li>
+              <input class="checkbox" type="checkbox" name="checkbox[]" id="male-5" value="male" /> <label for="male-5">Male</label>
+            </li>
+            <li>
+              <input class="checkbox" type="checkbox" name="checkbox[]" id="male-6" value="female" checked="checked" /><label for="male-6">Male</label>
+            </li>
+            <li>
+              <input class="checkbox" type="checkbox" name="checkbox[]" id="male-7" value="male" disabled="disabled" /><label for="male-7">checked disable</label>
+            </li>
+            <li>
+              <input class="checkbox" type="checkbox" name="checkbox[]" id="male-8" value="male" checked="checked" disabled="disabled" /><label for="male-8">unchecked disable</label>
+            </li>
+          </ul>
+          <script>
+            jQuery(function($) {
+              $('.checkbox').asCheck();
+            });
+          </script>
+        </div>
+      </section>
+    </section>
+  </div>
+  <script>
+    (function() {
+      $('#toc').toc();
+    })();
+  </script>
+</body>
+</html>

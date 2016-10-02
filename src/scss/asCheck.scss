@@ -1,0 +1,114 @@
+$checkboxBgColor: #fff;
+$checkboxBdColor: #d9d9d9;
+$checkboxHoverBdColor: #7ebfee;
+$checkboxBoxShadowColor: lighten($checkboxBgColor,100%);
+$checkboxBoxShadowInsetColor: darken($checkboxBgColor,100%);
+$checkboxHoverBoxShadowInsetColor: darken($checkboxHoverBdColor,3.3%);
+$checkboxDisabledBgColor: darken($checkboxBgColor,3.7%);
+$checkboxDisabledBdColor: darken($checkboxBgColor,8%);
+
+$checkboxSize: 14px;
+
+.asCheck_checkbox {
+  position: relative;
+  display: inline-block;
+  width: $checkboxSize;
+  height: $checkboxSize;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  background-color: $checkboxBgColor;
+  background-image: url("../images/asCheck.png");
+  background-position: 14px 0;
+  border: 1px solid $checkboxBdColor;
+  cursor: pointer;
+
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgba($checkboxBgColor,10%/100.0%), inset 0 1px 1px 0 rgba($checkboxBoxShadowInsetColor,10%/100.0%);
+
+  &:hover {
+    border-color: $checkboxHoverBdColor;
+    box-shadow: 0 1px 8px 0 rgba($checkboxHoverBoxShadowInsetColor,30%/100.0%), inset 0 1px 1px 0 rgba($checkboxBoxShadowInsetColor,10%/100.0%);
+  }
+
+  &.asCheck_checked {
+    box-shadow: 1px 1px 0 0 $checkboxBoxShadowColor;
+    background-position: -11px -51px;
+    &:hover {
+      border-color: $checkboxBdColor;
+    }
+  }
+
+  &.asCheck_disabled {
+    background-color: $checkboxDisabledBgColor;
+    border-color: $checkboxDisabledBdColor;
+    cursor: default;
+    box-shadow: 1px 1px 0 0 $checkboxBoxShadowColor;
+  }
+  &.asCheck_disabled.asCheck_checked {
+    background-color: $checkboxDisabledBgColor;
+    background-position: -51px -51px;
+    border-color: $checkboxDisabledBdColor;
+    cursor: default;
+    box-shadow: 1px 1px 0 0 $checkboxBoxShadowColor;
+  }
+}
+
+
+
+$radioBgColor: #fff;
+$radioBdColor: #d9d9d9;
+$radioBoxShadowInsetColor: darken($radioBgColor,100%);
+$radioHoverBgColor: #7ebfee;
+$radioBoxShadowColor: lighten($radioBgColor,100%);
+$radioHoverBoxShadowInsetColor: darken($radioHoverBgColor,3.3%);
+$radioDisabledBgColor: darken($radioBgColor,3.7%);
+$radioDisabledBdColor: darken($radioBgColor,8%);
+
+$radioSize: 14px;
+
+.asCheck_radio {
+  position: relative;
+  display: inline-block;
+  width: $radioSize;
+  height: $radioSize;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  background-color: $radioBgColor;
+  background-image: url("../images/asCheck.png");
+  background-position: 14px 0;
+  border: 1px solid $radioBdColor;
+  cursor: pointer;
+  border-radius: 100%;
+
+  box-shadow: 0 0 2px 0 rgba($radioBgColor,10%/100.0%), inset 0 1px 1px 0 rgba($radioBoxShadowInsetColor,10%/100.0%);
+
+  &:hover {
+    border-color: $radioHoverBgColor;
+    box-shadow: 0 1px 8px 0 rgba($radioHoverBoxShadowInsetColor,30%/100.0%), inset 0 1px 1px 0 rgba($radioBoxShadowInsetColor,10%/100.0%);
+  }
+
+  &.asCheck_checked {
+    background-position: -90px -48px;
+    box-shadow: 1px 1px 0 0 $radioBoxShadowColor;
+    &:hover {
+      border-color: $radioBdColor;
+    }
+  }
+
+  &.asCheck_disabled {
+    background-color: $radioDisabledBgColor;
+    border-color: $radioDisabledBdColor;
+    cursor: default;
+    box-shadow: 1px 1px 0 0 $radioBoxShadowColor;
+  }
+
+  &.asCheck_disabled.asCheck_checked {
+    background-color: $radioDisabledBgColor;
+    background-position: -120px -48px;
+    border-color: $radioDisabledBdColor;
+    cursor: default;
+    box-shadow: 1px 1px 0 0 $radioBoxShadowColor;
+  }
+}
