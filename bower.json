@@ -1,6 +1,6 @@
 {
   "name": "jquery-asCheck",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A jquery plugin that do amazing things.",
   "main": "dist/jquery-asCheck.js",
   "copyright": "amazingSurge",

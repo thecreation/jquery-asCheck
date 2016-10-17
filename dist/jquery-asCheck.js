@@ -1,5 +1,5 @@
 /**
-* jQuery asCheck v0.2.1
+* jQuery asCheck v0.2.2
 * https://github.com/amazingSurge/jquery-asCheck
 *
 * Copyright (c) amazingSurge
@@ -220,13 +220,11 @@
       }, {
         key: '_trigger',
         value: function _trigger(eventType) {
-          var _ref;
-
           for (var _len = arguments.length, params = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
             params[_key - 1] = arguments[_key];
           }
 
-          var data = (_ref = [this]).concat.apply(_ref, params);
+          var data = [this].concat(params);
 
           // event
           this.$input.trigger(NAMESPACE$1 + '::' + eventType, data);
@@ -241,9 +239,7 @@
           var onFunction = 'on' + eventType;
 
           if (typeof this.options[onFunction] === 'function') {
-            var _options$onFunction;
-
-            (_options$onFunction = this.options[onFunction]).apply.apply(_options$onFunction, [this].concat(params));
+            this.options[onFunction].apply(this, params);
           }
         }
       }, {
@@ -375,7 +371,7 @@
     }();
 
     var info = {
-      version: '0.2.1'
+      version: '0.2.2'
     };
 
     var NAMESPACE = 'asCheck';

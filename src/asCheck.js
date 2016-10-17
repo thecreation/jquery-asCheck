@@ -114,7 +114,7 @@ class asCheck {
   }
 
   _trigger(eventType, ...params) {
-    let data = [this].concat(...params);
+    let data = [this].concat(params);
 
     // event
     this.$input.trigger(`${NAMESPACE}::${eventType}`, data);
@@ -126,7 +126,7 @@ class asCheck {
     let onFunction = `on${eventType}`;
 
     if (typeof this.options[onFunction] === 'function') {
-      this.options[onFunction].apply(this, ...params);
+      this.options[onFunction].apply(this, params);
     }
   }
 
