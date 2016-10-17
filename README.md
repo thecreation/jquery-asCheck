@@ -46,6 +46,11 @@ bower install jquery-asCheck --save
 npm install jquery-asCheck --save
 ```
 
+#### Install From Yarn
+```sh
+yarn add jquery-asCheck
+```
+
 #### Build From Source
 If you want build from source:
 
@@ -108,11 +113,11 @@ You can also save the instances to variable for further use.
 
 ```javascript
 // call directly
-$().asCheck('destory');
+$().asCheck('destroy');
 
 // or
 var api = $().data('asCheck');
-api.destory();
+api.destroy();
 ```
 
 #### enable()

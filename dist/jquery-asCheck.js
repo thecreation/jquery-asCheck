@@ -1,5 +1,5 @@
 /**
-* jQuery asCheck v0.2.0
+* jQuery asCheck v0.2.1
 * https://github.com/amazingSurge/jquery-asCheck
 *
 * Copyright (c) amazingSurge
@@ -288,7 +288,7 @@
                 this.$input.prop('checked', true);
 
                 if (this.initialized) {
-                  this._trigger('change', [this.checked]);
+                  this._trigger('change', this.checked);
                 }
               } else {
                 this.checked = value;
@@ -298,7 +298,7 @@
                 if (this.type === 'checkbox') {
 
                   if (this.initialized) {
-                    this._trigger('change', [this.checked]);
+                    this._trigger('change', this.checked);
                   }
                 }
               }
@@ -346,6 +346,7 @@
         key: 'enable',
         value: function enable() {
           this.set('disabled', true);
+          this._trigger('enable');
 
           return this;
         }
@@ -353,13 +354,15 @@
         key: 'disable',
         value: function disable() {
           this.set('disabled', false);
+          this._trigger('disable');
 
           return this;
         }
       }, {
-        key: 'destory',
-        value: function destory() {
+        key: 'destroy',
+        value: function destroy() {
           this.$check.remove();
+          this._trigger('destroy');
         }
       }], [{
         key: 'setDefaults',
@@ -372,7 +375,7 @@
     }();
 
     var info = {
-      version: '0.2.0'
+      version: '0.2.1'
     };
 
     var NAMESPACE = 'asCheck';

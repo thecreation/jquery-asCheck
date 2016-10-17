@@ -113,7 +113,6 @@ class asCheck {
     return events.join(' ');
   }
 
-
   _trigger(eventType, ...params) {
     let data = [this].concat(...params);
 
@@ -163,7 +162,7 @@ class asCheck {
           this.$input.prop('checked', true);
 
           if(this.initialized) {
-            this._trigger('change', [this.checked]);
+            this._trigger('change', this.checked);
           }
         } else {
           this.checked = value;
@@ -172,7 +171,7 @@ class asCheck {
 
           if (this.type === 'checkbox') {
             if(this.initialized) {
-              this._trigger('change', [this.checked]);
+              this._trigger('change', this.checked);
             }
           }
         }
@@ -212,17 +211,20 @@ class asCheck {
 
   enable() {
     this.set('disabled', true);
+    this._trigger('enable');
     return this;
   }
 
   disable() {
     this.set('disabled', false);
+    this._trigger('disable');
+
     return this;
   }
 
-  destory() {
+  destroy() {
     this.$check.remove();
-
+    this._trigger('destroy');
   }
 
   static setDefaults(options) {
