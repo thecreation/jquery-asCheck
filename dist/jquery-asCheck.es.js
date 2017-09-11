@@ -1,5 +1,5 @@
 /**
-* jQuery asCheck v0.2.2
+* jQuery asCheck v0.2.3
 * https://github.com/amazingSurge/jquery-asCheck
 *
 * Copyright (c) amazingSurge
@@ -247,7 +247,7 @@ class asCheck {
 }
 
 var info = {
-  version:'0.2.2'
+  version:'0.2.3'
 };
 
 const NAMESPACE = 'asCheck';

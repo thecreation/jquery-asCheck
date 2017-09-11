@@ -1,13 +1,13 @@
-$checkboxBgColor: #fff;
-$checkboxBdColor: #d9d9d9;
-$checkboxHoverBdColor: #7ebfee;
-$checkboxBoxShadowColor: lighten($checkboxBgColor,100%);
-$checkboxBoxShadowInsetColor: darken($checkboxBgColor,100%);
-$checkboxHoverBoxShadowInsetColor: darken($checkboxHoverBdColor,3.3%);
-$checkboxDisabledBgColor: darken($checkboxBgColor,3.7%);
-$checkboxDisabledBdColor: darken($checkboxBgColor,8%);
+$checkboxBgColor: #fff !default;
+$checkboxBdColor: #d9d9d9 !default;
+$checkboxHoverBdColor: #7ebfee !default;
+$checkboxBoxShadowColor: lighten($checkboxBgColor,100%) !default;
+$checkboxBoxShadowInsetColor: darken($checkboxBgColor,100%) !default;
+$checkboxHoverBoxShadowInsetColor: darken($checkboxHoverBdColor,3.3%) !default;
+$checkboxDisabledBgColor: darken($checkboxBgColor,3.7%) !default;
+$checkboxDisabledBdColor: darken($checkboxBgColor,8%) !default;
 
-$checkboxSize: 14px;
+$checkboxSize: 14px !default;
 
 .asCheck_checkbox {
   position: relative;
@@ -56,16 +56,16 @@ $checkboxSize: 14px;
 
 
 
-$radioBgColor: #fff;
-$radioBdColor: #d9d9d9;
-$radioBoxShadowInsetColor: darken($radioBgColor,100%);
-$radioHoverBgColor: #7ebfee;
-$radioBoxShadowColor: lighten($radioBgColor,100%);
-$radioHoverBoxShadowInsetColor: darken($radioHoverBgColor,3.3%);
-$radioDisabledBgColor: darken($radioBgColor,3.7%);
-$radioDisabledBdColor: darken($radioBgColor,8%);
+$radioBgColor: #fff !default;
+$radioBdColor: #d9d9d9 !default;
+$radioBoxShadowInsetColor: darken($radioBgColor,100%) !default;
+$radioHoverBgColor: #7ebfee !default;
+$radioBoxShadowColor: lighten($radioBgColor,100%) !default;
+$radioHoverBoxShadowInsetColor: darken($radioHoverBgColor,3.3%) !default;
+$radioDisabledBgColor: darken($radioBgColor,3.7%) !default;
+$radioDisabledBdColor: darken($radioBgColor,8%) !default;
 
-$radioSize: 14px;
+$radioSize: 14px !default;
 
 .asCheck_radio {
   position: relative;
